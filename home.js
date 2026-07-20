@@ -1,5 +1,5 @@
 (function () {
-  const BM_URL = "https://api.battlemetrics.com/servers/39271967";
+  const STATUS_URL = "status.json";
 
   const elPlayers = document.getElementById("bm-players");
   const elMax = document.getElementById("bm-max");
@@ -26,23 +26,26 @@
     requestAnimationFrame(frame);
   }
 
+  function applyStatus(data) {
+    const online = !!data.running;
+    const players = Number(data.players || 0);
+    const max = Number(data.maxPlayers || 0) || 50;
+
+    if (elDot) elDot.className = "status-dot " + (online ? "is-online" : "is-offline");
+    if (elLive) {
+      elLive.classList.toggle("is-online", online);
+      elLive.classList.toggle("is-offline", !online);
+    }
+    animateNumber(elPlayers, players);
+    if (elMax) elMax.textContent = String(max);
+  }
+
   async function refresh() {
     try {
-      const res = await fetch(BM_URL, { cache: "no-store" });
+      const res = await fetch(STATUS_URL + "?t=" + Date.now(), { cache: "no-store" });
       if (!res.ok) throw new Error("bad");
-      const json = await res.json();
-      const a = (json.data && json.data.attributes) || {};
-      const online = String(a.status || "").toLowerCase() === "online";
-      const players = Number(a.players || 0);
-      const max = Number(a.maxPlayers || 0) || 50;
-
-      if (elDot) elDot.className = "status-dot " + (online ? "is-online" : "is-offline");
-      if (elLive) {
-        elLive.classList.toggle("is-online", online);
-        elLive.classList.toggle("is-offline", !online);
-      }
-      animateNumber(elPlayers, players);
-      if (elMax) elMax.textContent = String(max);
+      const data = await res.json();
+      applyStatus(data);
     } catch (e) {
       if (elPlayers) elPlayers.textContent = "—";
       if (elMax) elMax.textContent = "—";
@@ -55,5 +58,5 @@
   }
 
   refresh();
-  setInterval(refresh, 60000);
+  setInterval(refresh, 30000);
 })();
