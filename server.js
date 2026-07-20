@@ -35,9 +35,14 @@ const server = http.createServer((req, res) => {
   try {
     const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
     let filePath = path.join(ROOT, urlPath === "/" ? "index.html" : urlPath);
+    const rootResolved = path.resolve(ROOT);
 
-    if (!filePath.startsWith(ROOT)) {
+    if (!path.resolve(filePath).startsWith(rootResolved)) {
       return send(res, 403, "Forbidden");
+    }
+
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+      filePath = path.join(filePath, "index.html");
     }
 
     if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
