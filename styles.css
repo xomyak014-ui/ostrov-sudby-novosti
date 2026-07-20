@@ -246,6 +246,52 @@ a:hover {
   align-items: center;
 }
 
+.hero-dock-links {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.btn-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.45rem;
+  flex-shrink: 0;
+}
+
+.btn-discord,
+.btn-wargm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-discord {
+  background: #5865f2;
+  border-color: #5865f2;
+  color: #fff;
+}
+
+.btn-discord:hover {
+  background: #4752c4;
+  border-color: #4752c4;
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(88, 101, 242, 0.35);
+}
+
+.btn-wargm {
+  background: transparent;
+  border-color: rgba(212, 184, 74, 0.55);
+  color: var(--accent);
+}
+
+.btn-wargm:hover {
+  background: rgba(212, 184, 74, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 12px 30px var(--accent-dim);
+}
+
 .btn.is-copied {
   background: var(--online);
   border-color: var(--online);
@@ -318,6 +364,11 @@ a:hover {
   gap: 0.55rem;
   justify-content: flex-end;
 }
+
+.hero-dock-links .dock-actions {
+  max-width: 100%;
+}
+
 
 .btn {
   display: inline-flex;
@@ -848,7 +899,8 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .hero-dock-simple {
+  .hero-dock-simple,
+  .hero-dock-links {
     grid-template-columns: 1fr;
   }
 
