@@ -1,0 +1,11 @@
+{
+  "name": "ostrov-sudby-novosti",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Новостной сайт сервера Остров Судьбы (SCUM)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "install-autostart": "powershell -ExecutionPolicy Bypass -File ./install-autostart.ps1"
+  }
+}

@@ -1,0 +1,19 @@
+# Secrets / local only
+permanent-link.env
+tools/ngrok.yml
+server.log
+
+# Local tools binaries (re-downloadable)
+tools/ngrok.exe
+tools/*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+.vscode/
+.idea/
+
+# Node
+node_modules/
