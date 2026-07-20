@@ -5,12 +5,11 @@
     "mode": "PvE",
     "status": "online",
     "region": "RU",
-    "players": null,
-    "maxPlayers": 64,
-    "ip": "",
-    "port": "",
-    "steamQuery": "",
-    "description": "Основной PvE-сервер проекта. Выживание, крафт, охота и строительство без PvP-горячки.",
+    "ip": "37.150.212.7",
+    "port": "7790",
+    "statusApi": "http://37.150.212.7:8080/api/status",
+    "maxPlayers": 50,
+    "description": "Основной PvE-сервер проекта. Выживание, крафт, охота и строительство.",
     "tags": ["PvE", "RU", "SCUM"]
   }
 ]

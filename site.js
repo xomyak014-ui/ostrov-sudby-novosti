@@ -4,19 +4,29 @@
     path.includes("/news") ||
     path.endsWith("news.html") ||
     path.includes("into-the-wild");
-  const active = onNews ? "news" : "servers";
+  const active = onNews ? "news" : "home";
 
   const brandHref = onNews && path.includes("/news/") ? "../index.html" : "index.html";
-  const serversHref = brandHref;
+  const homeHref = brandHref;
   const newsHref = onNews && path.includes("/news/") ? "index.html" : "news/index.html";
 
   const mount = document.querySelector("[data-site-nav]");
   if (mount) {
     mount.innerHTML =
-      '<a class="brand" href="' + brandHref + '">ОСТРОВ <span>СУДЬБЫ</span></a>' +
+      '<a class="brand" href="' +
+      brandHref +
+      '">ОСТРОВ <span>СУДЬБЫ</span></a>' +
       '<nav class="tabs" aria-label="Разделы сайта">' +
-      '<a class="tab' + (active === "servers" ? " is-active" : "") + '" href="' + serversHref + '">Серверы</a>' +
-      '<a class="tab' + (active === "news" ? " is-active" : "") + '" href="' + newsHref + '">Новости</a>' +
+      '<a class="tab' +
+      (active === "home" ? " is-active" : "") +
+      '" href="' +
+      homeHref +
+      '">Главная</a>' +
+      '<a class="tab' +
+      (active === "news" ? " is-active" : "") +
+      '" href="' +
+      newsHref +
+      '">Новости</a>' +
       "</nav>";
   }
 
@@ -31,7 +41,9 @@
     },
     { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
   );
-  document.querySelectorAll(".reveal, .media, .video-wrap, .server-row").forEach(function (el) {
-    io.observe(el);
-  });
+  document
+    .querySelectorAll(".reveal, .media, .video-wrap, .server-row, .news-card, .feature-row li")
+    .forEach(function (el) {
+      io.observe(el);
+    });
 })();
