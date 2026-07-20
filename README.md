@@ -9,10 +9,9 @@
 
 ## Онлайн
 
-Публичная ссылка (если Pages доступен):  
 https://xomyak014-ui.github.io/ostrov-sudby-novosti/
 
-Репозиторий **приватный** — исходники видите только вы (и кому дадите доступ).
+Репозиторий: https://github.com/xomyak014-ui/ostrov-sudby-novosti
 
 ## Локально
 
@@ -26,13 +25,12 @@ http://localhost:8090
 
 ```powershell
 cd $env:USERPROFILE\Desktop
-gh repo clone xomyak014-ui/ostrov-sudby-novosti Ostrov-Sudby-Novosti
+git clone https://github.com/xomyak014-ui/ostrov-sudby-novosti.git Ostrov-Sudby-Novosti
 cd Ostrov-Sudby-Novosti
 npm start
 ```
 
-(нужен вход в GitHub: `gh auth login`)
-
 ## Редактирование серверов
 
 Файл `servers.json` — имя, режим, статус, IP, описание, теги.
+
