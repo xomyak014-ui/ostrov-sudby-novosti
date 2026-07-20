@@ -2,9 +2,15 @@
 
 Новостной сайт сервера **Остров Судьбы** (SCUM).
 
-## Онлайн
+## Онлайн (постоянная ссылка)
 
-Сайт публикуется через **GitHub Pages** — работает постоянно, ПК не нужен.
+https://xomyak014-ui.github.io/ostrov-sudby-novosti/
+
+Работает через **GitHub Pages** — ПК не нужен, ссылка не меняется.
+
+## Репозиторий (бэкап всех файлов)
+
+https://github.com/xomyak014-ui/ostrov-sudby-novosti
 
 ## Локально
 
@@ -23,12 +29,10 @@ start.bat
 
 ```powershell
 cd $env:USERPROFILE\Desktop
-git clone https://github.com/OWNER/REPO.git Ostrov-Sudby-Novosti
+git clone https://github.com/xomyak014-ui/ostrov-sudby-novosti.git Ostrov-Sudby-Novosti
 cd Ostrov-Sudby-Novosti
 npm start
 ```
-
-(ссылка на репозиторий появится после первого push)
 
 ## Файлы
 
