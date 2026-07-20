@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ostrov-sudby-pve",
+    "name": "Остров Судьбы | PvE",
+    "mode": "PvE",
+    "status": "online",
+    "region": "RU",
+    "players": null,
+    "maxPlayers": 64,
+    "ip": "",
+    "port": "",
+    "steamQuery": "",
+    "description": "Основной PvE-сервер проекта. Выживание, крафт, охота и строительство без PvP-горячки.",
+    "tags": ["PvE", "RU", "SCUM"]
+  }
+]

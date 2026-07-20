@@ -3,499 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Остров Судьбы — Июльское обновление SCUM: Into the Wild</title>
-  <meta name="description" content="Новости сервера Остров Судьбы. Полный перевод июльского обновления SCUM Into the Wild 1.3.2.0." />
+  <title>Остров Судьбы — PvE серверы SCUM</title>
+  <meta name="description" content="Список PvE-серверов проекта Остров Судьбы. Выживание в SCUM без PvP." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-nav">
-    <div class="brand">ОСТРОВ <span>СУДЬБЫ</span></div>
-    <div class="nav-meta">SCUM · Новости · 20 июля 2026</div>
-  </header>
+  <header class="site-nav" data-site-nav></header>
 
-  <section class="hero">
+  <section class="hero hero-home">
     <div class="hero-media">
       <img
         src="https://clan.fastly.steamstatic.com/images/27012442/fe3d5d85f2a09540e9ea2fbf122de7c962dc32f7.png"
-        alt="SCUM Into the Wild — июльское обновление"
+        alt="Остров Судьбы"
         fetchpriority="high"
       />
     </div>
     <div class="hero-content">
-      <p class="eyebrow">Сервер выживания · Официальные новости</p>
-      <h1>INTO THE WILD<br />ИЮЛЬСКОЕ ОБНОВЛЕНИЕ</h1>
+      <p class="eyebrow">SCUM · Проект серверов</p>
+      <h1>ОСТРОВ<br />СУДЬБЫ</h1>
       <p class="hero-lead">
-        Новый туториал TEC1, мутанты, Мастер-охотник, 80 игроков на официальных серверах
-        и куча улучшений качества жизни. Версия 1.3.2.0.134527.
+        PvE-серверы для спокойного выживания: крафт, охота, базы и ивенты —
+        без войны всех против всех.
       </p>
       <div class="cta-row">
-        <a class="btn" href="#news">Читать новость</a>
-        <a class="btn btn-ghost" href="#video">Смотреть трейлер</a>
+        <a class="btn" href="#servers">Список серверов</a>
+        <a class="btn btn-ghost" href="news/index.html">Новости игры</a>
       </div>
     </div>
   </section>
 
-  <main class="article" id="news">
-    <p class="lead reveal"><strong>Привет, заключённые.</strong></p>
-    <p class="lead reveal"><strong>Июльское обновление Into the Wild уже доступно!</strong></p>
-    <p class="reveal">
-      В этом месяце — совершенно новый обучающий опыт внутри тренировочного комплекса TEC1,
-      мутировавшие олени, кабаны и волки, а также Мастер-охотник с новыми уровнями сложных квестов
-      и эксклюзивными наградами.
-    </p>
-    <p class="reveal">
-      Также: переработанные туториалы на Острове, улучшенное поведение животных,
-      официальные серверы до 80 игроков, новые удобства, фиксы, баланс и правки по отзывам игроков.
-    </p>
+  <main class="page" id="servers">
+    <header class="page-head reveal">
+      <p class="section-kicker">PvE</p>
+      <h2 class="page-title">Серверы</h2>
+      <p class="page-sub">Актуальный список серверов проекта. Данные можно править в файле servers.json.</p>
+    </header>
 
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/fe3d5d85f2a09540e9ea2fbf122de7c962dc32f7.png" alt="Баннер обновления" loading="lazy" />
-    </figure>
-
-    <h2 class="section-title reveal">СЕЗОН INTO THE WILD ПРОДОЛЖАЕТСЯ</h2>
-    <p class="reveal">
-      Прежде чем разобрать всё содержимое июльского патча: Into the Wild идёт дальше
-      первоначального трёхмесячного плана.
-    </p>
-    <p class="reveal">
-      Когда сезон анонсировали, он должен был длиться с мая по июль. С тех пор он вырос —
-      теперь Into the Wild продолжится через <strong>август и сентябрь</strong>.
-      Команде нужно больше времени на разработку, а каждому обновлению — больше пространства.
-    </p>
-    <p class="reveal">
-      В двух следующих апдейтах продолжат развивать охоту, готовку, еду и рыбалку —
-      с новыми вызовами и улучшениями.
-    </p>
-    <p class="reveal"><strong>А теперь — всё, что вошло в июльское обновление.</strong></p>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/348ed3926dd3310a6eba91d5703d88bcb4a6c19f.png" alt="Разделитель Into the Wild" loading="lazy" />
-    </figure>
-
-    <div class="video-wrap reveal" id="video">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/VYCvU490Jd8?rel=0&modestbranding=1&playsinline=1"
-        title="Трейлер июльского обновления SCUM"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
+    <div id="server-list" class="server-list" aria-live="polite">
+      <p class="muted reveal">Загрузка списка…</p>
     </div>
-
-    <h2 class="section-title reveal">ТРЕНИРОВОЧНЫЙ КОМПЛЕКС TEC1</h2>
-    <p class="section-kicker reveal">Камеры уже работают. Дайте им зрелище.</p>
-    <p class="reveal">
-      TEC1 Conditioning Facility — специальный тренировочный комплекс, который готовит вас
-      к шоу выживания на Острове.
-    </p>
-    <p class="reveal">
-      SCUM с первых минут обрушивает на игрока слишком много. В комплексе можно спокойно
-      освоить основы, пока давление ещё не включено: первые часы на Острове уйдут на выживание,
-      а не на разбор «как всё работает».
-    </p>
-    <p class="reveal">
-      Вас проведут через практические упражнения: движение и скрытность, крафт инструментов и оружия,
-      первая встреча с куклой, лечение ран и бой.
-    </p>
-
-    <figure class="media gif reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/02e6ae67d4b4c9ba2afe0514bd9360ac8656ab90.gif" alt="Обучение в TEC1" loading="lazy" />
-    </figure>
-
-    <p class="reveal">
-      Проходите этапы программы, повторяйте нужное и докажите, что готовы к следующему испытанию.
-    </p>
-    <p class="reveal">
-      Новый туториал меняет и общий онбординг: старое интро-видео убрали, у Deena новый голос
-      и полностью новые реплики в TEC1. Диалоги туториала на Острове тоже переписаны в том же стиле.
-    </p>
-    <p class="reveal">
-      <strong>Как попасть в комплекс:</strong> в главном меню выберите <strong>TUTORIAL</strong>.
-      Это отдельный режим — не одиночная и не сетевая игра, он не стартует сам при создании персонажа.
-    </p>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/ef2cc45bbd6a9489a4eebc6e5134bf48b04f8cc5.png" alt="Меню Tutorial" loading="lazy" />
-    </figure>
-
-    <h2 class="section-title reveal">ТУТОРИАЛЫ НА ОСТРОВЕ</h2>
-    <p class="reveal">
-      Система обучения на Острове обновлена: больше контроля над тем, чему учиться и когда.
-    </p>
-    <p class="reveal">
-      Откройте вкладку Tutorials и выбирайте: Survival, Crafting, Metabolism, Economy,
-      Base Building и Hunting. Жёсткой последовательности нет — берите то, что нужно сейчас.
-    </p>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/18b6a30d1a8b77361c673a6b8ee4bbcf1c20fb4e.jpg" alt="Вкладка туториалов" loading="lazy" />
-    </figure>
-
-    <p class="reveal">
-      Цели стали гибче: туториал смотрит на результат, а не на строгий порядок действий.
-      Уже сделали шаг другим способом — прогресс засчитают.
-    </p>
-    <p class="reveal">
-      Улучшены подсветка и отслеживание нужных предметов и мест. Любой туториал можно бросить
-      и позже начать заново — доступ не пропадёт.
-    </p>
-    <p class="reveal">
-      Старый вопрос при создании персонажа «запускать туториалы автоматически?» убран —
-      теперь всё выбирается вручную.
-    </p>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/0ec961085e7876709aef3f970889b3bc83d7338c.png" alt="Мутанты и Мастер-охотник" loading="lazy" />
-    </figure>
-
-    <p class="reveal">
-      Мутировавшие олени, кабаны и волки появляются в определённых точках Острова.
-      Они сильнее обычных и стоят в центре новых квестовых линий Мастер-охотника.
-    </p>
-
-    <figure class="media gif reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/a557b4b61b45be68b7bc3c55f50de8f1417a490e.gif" alt="Мутировавшие животные" loading="lazy" />
-    </figure>
-
-    <p class="reveal">
-      Глубоко в Hunter’s Grotto ждёт Мастер-охотник — в трофеях целой жизни, потраченной
-      на убийство тех, кто умел дать сдачи.
-    </p>
-    <p class="reveal">
-      Непроверенным заключённым он не тратит время. Сначала выполните один квест у обычного Hunter,
-      чтобы открыть Quest Book Мастер-охотника и три всё более опасных уровня охотничьих испытаний.
-    </p>
-
-    <h2 class="section-title reveal">ТРИ УРОВНЯ ОХОТЫ</h2>
-    <p class="reveal">Мастер-охотник предлагает три тира квестов — у каждого свой мутант:</p>
-    <ul class="list reveal">
-      <li><strong>ТИР 1</strong> — мутировавшие олени</li>
-      <li><strong>ТИР 2</strong> — мутировавшие кабаны</li>
-      <li><strong>ТИР 3</strong> — мутировавшие волки</li>
-    </ul>
-    <p class="reveal">
-      Помимо охоты на мутантов будут разные условия: конкретное оружие, целые шкуры, мясо,
-      рога и головы. Состояние добычи важно — неаккуратный выстрел может лишить нужного лута.
-    </p>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/ac145e5b40e7d87941060825ed046dc1a86413a9.png" alt="Награды охоты" loading="lazy" />
-    </figure>
-
-    <h2 class="section-title reveal">НАГРАДЫ, РАДИ КОТОРЫХ СТОИТ ОХОТИТЬСЯ</h2>
-    <p class="reveal">
-      У линий Мастер-охотника — самая большая коллекция зарабатываемых наград за квесты в SCUM на данный момент.
-    </p>
-    <p class="reveal">
-      Раньше чаще давали Fame, деньги и торговые сделки. Теперь — эксклюзивное оружие, снаряжение охотника,
-      амулеты, рецепты строительства и даже части костюма самого Мастер-охотника.
-    </p>
-    <ul class="list reveal">
-      <li>
-        <strong>Тир 1:</strong> Hunter’s Recurve Bow, Hunting Quiver, Ridgeline Bait Feeder,
-        Deer Skull Charm, Deer Skull Trophy и штаны Мастер-охотника.
-      </li>
-      <li>
-        <strong>Тир 2:</strong> Hunter Blackhawk Crossbow, Hunter Monocular, Seasoned Hunter Skinning Knife,
-        Deer Skull Chandelier, Boar Skull Charm, Boar Skull Trophy и ботинки Мастер-охотника.
-      </li>
-      <li>
-        <strong>Тир 3:</strong> Blackline Compound Bow, Master’s Skinning Knife, Hunter Double Bed,
-        Wolf Skull Charm, Wolf Skull Trophy и полевая куртка Мастер-охотника.
-      </li>
-    </ul>
-    <p class="reveal">
-      Физические награды приходят в depot торговца. После выполнения квеста предмет навсегда
-      открывается к покупке у Hunter.
-    </p>
-    <p class="reveal">
-      Награды строительства работают иначе: рецепт сразу попадает в меню базы —
-      стройте, когда есть материалы.
-    </p>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/6eccd6a5279501ca4b4b92dd8e6001e2a500b64f.png" alt="Системы квестов" loading="lazy" />
-    </figure>
-
-    <h2 class="section-title reveal">ГДЕ СИСТЕМЫ СХОДЯТСЯ ВМЕСТЕ</h2>
-    <p class="reveal">
-      Переработка квестов в мае дала предметные награды, понятный прогресс и гибкую основу.
-      Мастер-охотник развивает это: новые категории наград, анлоки строительства и гораздо больше предметов.
-    </p>
-    <ul class="list reveal">
-      <li>Можно заранее смотреть следующие тиры и награды; закрытые квесты подсказывают, что делать дальше.</li>
-      <li>Презентация наград улучшена — оружие, экипировку, одежду и рецепты проще понять до старта.</li>
-      <li>
-        В квестах на убийство животных добыча в радиусе 50 м засчитывается и при охоте с другими игроками.
-        Завершённые квесты больше нельзя случайно бросить.
-      </li>
-    </ul>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/329e9dff9bda6aa9360b1df9c283b322f16ea2e8.png" alt="Прогресс охоты" loading="lazy" />
-    </figure>
-
-    <p class="reveal">
-      Вместе со свободной дичью, трекингом, кормушками-приманками и качеством добычи
-      квесты Мастер-охотника дают больше разнообразия и ощущения прогресса.
-    </p>
-
-    <h2 class="section-title reveal">ЕЩЁ НЕ ПРОШЛИ?</h2>
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/46737249f2444994f43602c27c23f6c76b936126.png" alt="Юбилейный квест" loading="lazy" />
-    </figure>
-    <p class="reveal">
-      <strong>Юбилейный квест SCUM 1.0 доступен до 31 июля.</strong>
-    </p>
-    <p class="reveal">
-      Начните у торговца Hunter, пройдите след по Острову и получите рецепт скина оружия
-      Carbon Hunter Ironpaw. Предыдущий прогресс не нужен — любой заключённый может стартовать сразу.
-    </p>
-    <p class="reveal">
-      После открытия Carbon Hunter Ironpaw крафтится из Carbon Hunter и toolbox.
-    </p>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/f3c63ed5da6ba12737a06e18912d68001afe94e3.png" alt="Carbon Hunter Ironpaw" loading="lazy" />
-    </figure>
-
-    <p class="reveal">
-      Июль также приносит практические улучшения: быстрее инвентарь, понятнее меню,
-      больше игроков на официальных серверах.
-    </p>
-
-    <h2 class="section-title reveal">ПЕРЕМЕЩАЙТЕ ВСЁ СРАЗУ</h2>
-    <p class="reveal">
-      Новая опция <strong>Drop All</strong> выбрасывает содержимое одежды, контейнеров и транспорта
-      в окрестность одним действием — включая лут из searchable-объектов.
-    </p>
-    <p class="reveal">
-      Когда вещи на земле, <strong>Pick Up All</strong> поднимает всё из окрестности сразу.
-    </p>
-
-    <figure class="media gif reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/76c328feee67cb72c9eec16d45c75ace5c16d791.gif" alt="Drop All и Pick Up All" loading="lazy" />
-    </figure>
-
-    <p class="reveal">
-      В depot торговцев тоже появилась кнопка <strong>Pick Up All</strong>: купили несколько позиций —
-      заберите весь заказ разом.
-    </p>
-
-    <figure class="media gif reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/df14a2111c166aa7e128ea3eed254cde1dd4b8bb.gif" alt="Pick Up All у торговца" loading="lazy" />
-    </figure>
-
-    <h2 class="section-title reveal">ОБНОВЛЁННЫЕ ВКЛАДКИ КРАФТА, ГОТОВКИ И СТРОИТЕЛЬСТВА</h2>
-    <p class="reveal">
-      Вкладки Crafting, Cooking и Base Building освежили визуально — ближе к новому Inventory UI.
-      Меню стали понятнее и единообразнее, плюс база для будущих систем.
-    </p>
-
-    <figure class="media gif reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/49aeafea39c0d2e22b85639f00ea9c049d71fb91.gif" alt="Обновлённые меню" loading="lazy" />
-    </figure>
-
-    <h2 class="section-title reveal">БОЛЬШЕ МЕСТА ДЛЯ TAUNT’ОВ</h2>
-    <p class="reveal">
-      Taunt’ов стало много — один радиальное меню уже не тянуло. Теперь базовые и DLC taunt’ы
-      разделены на две категории: проще листать и выбирать.
-    </p>
-
-    <figure class="media gif reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/0ac65dc93c54b662ca08b02b63f61f0d3036c4df.gif" alt="Меню taunt" loading="lazy" />
-    </figure>
-
-    <h2 class="section-title reveal">80 ИГРОКОВ НА ОФИЦИАЛЬНЫХ СЕРВЕРАХ</h2>
-    <p class="reveal">
-      Официальные серверы теперь поддерживают до <strong>80</strong> игроков (раньше было 64).
-      Лимит уже подтверждён после тестов по производительности и стабильности.
-    </p>
-
-    <figure class="media gif reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/bcecb5d811e7fa739609eba5a13be44f456717fd.gif" alt="80 игроков на сервере" loading="lazy" />
-    </figure>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/34f8bfac25bbb5ea3741aea471675e7fe0c81617.png" alt="Apex Predator Pack" loading="lazy" />
-    </figure>
-
-    <p class="reveal">
-      Вместе с июльским апдейтом вышел набор <strong>APEX PREDATOR</strong> — в теме Into the Wild.
-      Это отдельный контент, не входящий в патчноуты обновления.
-    </p>
-
-    <h2 class="section-title reveal">APEX PREDATOR PACK</h2>
-    <p class="reveal">
-      Для тех, кто хочет выглядеть так же опасно, как Остров, на котором выжил: эксклюзивный лут,
-      оружие, амулеты, строительство, кастомизация, эмоции и позы для селфи.
-    </p>
-    <p class="reveal">
-      <a href="https://store.steampowered.com/app/4635200/SCUM_Apex_Predator_Pack" target="_blank" rel="noopener">
-        Открыть набор в Steam →
-      </a>
-    </p>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/1a448956f0b86f7f523cc489f40f36385a019d27.png" alt="Контент Apex Predator" loading="lazy" />
-    </figure>
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/2fbf949cbb92a7ea500f1992a719f81c53ed736e.png" alt="Предметы пака" loading="lazy" />
-    </figure>
-
-    <h2 class="section-title reveal">ИЗВЕСТНЫЕ ПРОБЛЕМЫ</h2>
-    <p class="note reveal">
-      Возможен краш при переходе на Остров при DLSS Balanced/Performance на DirectX 11.
-      Обход: DirectX 12, другой пресет DLSS или иной апскейлер. Команда разбирается.
-    </p>
-
-    <hr class="divider" />
-
-    <h2 class="section-title reveal">СПИСОК ИСПРАВЛЕНИЙ</h2>
-    <div class="fixes">
-      <details class="reveal" open>
-        <summary>Охота и животные</summary>
-        <ul>
-          <li>Исправлен слишком низкий урон по животным из огнестрела.</li>
-          <li>Исправлено: медведи могли выживать после попадания из M82.</li>
-          <li>Жертвы больше не игнорируют звуки хищников.</li>
-          <li>Травоядные снова убегают от ближайших хищников.</li>
-          <li>Туша меньше ломается после двух+ попаданий крупного калибра.</li>
-          <li>Улучшен баланс навигации животных.</li>
-        </ul>
-      </details>
-
-      <details class="reveal">
-        <summary>Интерфейс</summary>
-        <ul>
-          <li>Иконка SpicesMix_02: низкое разрешение и размытый текст — исправлено.</li>
-          <li>Список компонентов крафта больше не перекрывает кнопки Back / Craft/Place.</li>
-          <li>В подзадачах Hunting-торговца количество в корзине можно уменьшать и убирать.</li>
-          <li>Исправлена иконка торговца для дождевиков.</li>
-          <li>#DrawEnemyHealthBars снова показывает полоски здоровья Sentry.</li>
-          <li>Полоска силы заброса удочки не остаётся поверх других панелей инвентаря.</li>
-          <li>Головы животных снова можно перекладывать через vicinity.</li>
-          <li>Круговой прогресс при поедании оливок больше не застревает на 50%.</li>
-          <li>Goat Steak и Horse Steak у Hunting-торговца снова добавляются в корзину.</li>
-          <li>Outback Knife Sheath (Twitch Drop) больше не числится компонентом самого себя.</li>
-        </ul>
-      </details>
-
-      <details class="reveal">
-        <summary>Строительство базы</summary>
-        <ul>
-          <li>Чертежи больше не липнут к невидимым точкам при размещении.</li>
-          <li>Меч Zhan Ma Dao больше не «висит» на настенной стойке.</li>
-          <li>Исправлено зависание сервера при перетаскивании двери самолёта у рамы.</li>
-          <li>Сады снова строятся на свежих базах данных.</li>
-        </ul>
-      </details>
-
-      <details class="reveal">
-        <summary>Сервер и настройки</summary>
-        <ul>
-          <li>Новая админ-команда <code>#ListDLCItems</code> — список блюпринтов предметов из DLC.</li>
-          <li>Пример: <code>#ListDLCItems WoodlandHunterPack</code>. В одиночке спавн DLC только при владении паком.</li>
-          <li>Рестарт сервера + выход из игры больше не возвращают старое главное меню.</li>
-          <li>Предметы не остаются облучёнными после выключения радиации.</li>
-        </ul>
-      </details>
-
-      <details class="reveal">
-        <summary>Транспорт</summary>
-        <ul>
-          <li>Исправлено: транспорт иногда не спавнился в Sandbox.</li>
-          <li>Транспорт больше не исчезает при отдалении игрока в Sandbox.</li>
-          <li>Лут в прицепе трактора не остаётся после уничтожения прицепа.</li>
-          <li>Исправлено отсутствие спавна Barba на карте.</li>
-        </ul>
-      </details>
-
-      <details class="reveal">
-        <summary>Оружие</summary>
-        <ul>
-          <li>Магазины больше не клипают сквозь руки в анимации Check ammo лёжа.</li>
-          <li>Анимация стрельбы из лука корректно реплицируется при быстрых выстрелах.</li>
-          <li>Исправлено крепление импровизированного фонаря на M16A4 Apocalypso.</li>
-          <li>Штык M70 корректно стоит на RPK.</li>
-          <li>Стрелы Manchu bow синхронизированы с анимацией.</li>
-          <li>У Hunter85 приведены в порядок имя и описание.</li>
-          <li>Исправлена точка прицеливания у BlackHawk crossbow.</li>
-          <li>Луки снова нормально натягивают стрелу при наклоне.</li>
-        </ul>
-      </details>
-
-      <details class="reveal">
-        <summary>Квесты, уровень и прочее</summary>
-        <ul>
-          <li>Можно снова сдавать квестовые предметы в конкретный mailbox в Samobor.</li>
-          <li>Исправлены свойства части поверхностей террейна.</li>
-          <li>Нельзя строить сундуки внутри определённого камня.</li>
-          <li>Меньше мерцания виноградных лоз.</li>
-          <li>Контейнер сдачи квеста больше не парит в воздухе.</li>
-          <li>Дождь не проходит сквозь бункер B0 после релога.</li>
-          <li>Убран невидимый источник воды в секторе C4.</li>
-          <li>Эффект дырки от пули не появляется на бочках от мили.</li>
-          <li>Двери в здании сектора D2 снова открываются корректно.</li>
-          <li>Куча правок уровня: тени, ветки в камнях, парящие объекты, формы террейна.</li>
-          <li>Граффити больше не проецируются на персонажей рядом.</li>
-          <li>Чертёж тачки нельзя поставить внутрь бункера C4.</li>
-          <li>Снова можно закапывать предметы на большой зоне сектора Z2.</li>
-          <li>Коллизия деревянных балок в Hunter’s Grotto (A0) восстановлена.</li>
-          <li>Единые таблички в сейф-зонах: Hunting / Hunter.</li>
-          <li>У салуна в Z3 снова есть текстуры лампы.</li>
-          <li>Квестовый ящик больше не стоит прямо за доской объявлений в радиации.</li>
-          <li>Костры не ломаются при прикуривании сигарет/сигар/скруток.</li>
-          <li>Клиппинг Sleeveless Shirt на «качке» исправлен.</li>
-          <li>Еда на бегу больше не дёргает персонажа на каждом укусе.</li>
-          <li>В сейф-зоне нельзя убивать игроков самолётом.</li>
-          <li>Исправлена деформация руки при питье из лейки и из стакана.</li>
-          <li>Труп не пропадает после респавна в Sandbox на DLC-персонаже.</li>
-          <li>Текстуры ног Raymond Cruz после смерти, деформации рук в SCUM shirt — исправлены.</li>
-          <li>Woodland Poncho / Raincoat: растяжение текстур и исчезновение волос — исправлено.</li>
-          <li>Woodland Chandelier не зацикливает эффекты разрушения при телепорте рядом.</li>
-          <li>Можно строить сколько угодно Woodland Hearth.</li>
-          <li>DLC-элементы базы нельзя спавнить без владения соответствующим DLC.</li>
-        </ul>
-      </details>
-    </div>
-
-    <figure class="media reveal">
-      <img src="https://clan.fastly.steamstatic.com/images/27012442/0a9e94f28f7168a7c152c39eeea5f304f759d98b.png" alt="Финал обновления" loading="lazy" />
-    </figure>
-
-    <p class="lead reveal">На этом июльское обновление заканчивается!</p>
-    <p class="reveal">Into the Wild идёт дальше через август и сентябрь — впереди ещё многое.</p>
-    <p class="reveal">Спасибо, что играете и продолжаете делиться фидбеком.</p>
-    <p class="lead reveal"><strong>Stay alive. Stay dangerous.</strong></p>
-    <p class="reveal" style="color: var(--muted); font-size: 0.9rem;">
-      Источник:
-      <a href="https://store.steampowered.com/news/app/513710/view/698770449667981410?l=russian" target="_blank" rel="noopener">
-        новость Steam SCUM
-      </a>
-      · перевод для сервера «Остров Судьбы»
-    </p>
   </main>
 
   <footer class="footer">
     <strong>ОСТРОВ СУДЬБЫ</strong>
-    Новостной сайт сервера SCUM · работает с вашего ПК как хост
+    PvE-проект SCUM · сайт развивается
   </footer>
 
+  <script src="site.js"></script>
   <script>
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
-    );
+    async function loadServers() {
+      const box = document.getElementById("server-list");
+      try {
+        const res = await fetch("servers.json", { cache: "no-store" });
+        const list = await res.json();
+        if (!Array.isArray(list) || !list.length) {
+          box.innerHTML = '<p class="muted">Серверы пока не добавлены.</p>';
+          return;
+        }
+        box.innerHTML = list
+          .map(function (s) {
+            const status = (s.status || "unknown").toLowerCase();
+            const statusLabel =
+              status === "online" ? "Онлайн" : status === "offline" ? "Оффлайн" : "Скоро";
+            const players =
+              s.players == null
+                ? "— / " + (s.maxPlayers || "—")
+                : s.players + " / " + (s.maxPlayers || "—");
+            const connect =
+              s.ip && s.port
+                ? '<button type="button" class="btn btn-small copy-btn" data-copy="' +
+                  s.ip +
+                  ":" +
+                  s.port +
+                  '">Скопировать IP</button>'
+                : '<span class="hint">IP появится позже</span>';
+            const tags = (s.tags || [])
+              .map(function (t) {
+                return '<span class="tag">' + t + "</span>";
+              })
+              .join("");
+            return (
+              '<article class="server-row reveal" data-id="' +
+              (s.id || "") +
+              '">' +
+              '<div class="server-main">' +
+              "<h3>" +
+              (s.name || "Сервер") +
+              "</h3>" +
+              '<p class="server-desc">' +
+              (s.description || "") +
+              "</p>" +
+              '<div class="tag-row">' +
+              tags +
+              "</div>" +
+              "</div>" +
+              '<div class="server-meta">' +
+              '<span class="status status-' +
+              status +
+              '">' +
+              statusLabel +
+              "</span>" +
+              "<div><span class=\"meta-label\">Режим</span><strong>" +
+              (s.mode || "PvE") +
+              "</strong></div>" +
+              "<div><span class=\"meta-label\">Регион</span><strong>" +
+              (s.region || "—") +
+              "</strong></div>" +
+              "<div><span class=\"meta-label\">Игроки</span><strong>" +
+              players +
+              "</strong></div>" +
+              connect +
+              "</div>" +
+              "</article>"
+            );
+          })
+          .join("");
 
-    document.querySelectorAll(".reveal, .media, .video-wrap").forEach((el) => io.observe(el));
+        document.querySelectorAll(".server-row").forEach(function (el) {
+          el.classList.add("is-in");
+        });
+
+        box.querySelectorAll(".copy-btn").forEach(function (btn) {
+          btn.addEventListener("click", async function () {
+            const val = btn.getAttribute("data-copy");
+            try {
+              await navigator.clipboard.writeText(val);
+              btn.textContent = "Скопировано";
+              setTimeout(function () {
+                btn.textContent = "Скопировать IP";
+              }, 1600);
+            } catch (e) {
+              btn.textContent = val;
+            }
+          });
+        });
+      } catch (err) {
+        box.innerHTML = '<p class="muted">Не удалось загрузить список серверов.</p>';
+      }
+    }
+    loadServers();
   </script>
 </body>
 </html>
