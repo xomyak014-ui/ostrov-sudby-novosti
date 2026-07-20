@@ -332,6 +332,27 @@ a:hover {
   box-shadow: 0 16px 32px var(--accent-dim);
 }
 
+.bm-banner {
+  display: block;
+  line-height: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1a1a1a;
+  overflow: hidden;
+  transition: border-color 0.35s var(--ease), transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.bm-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bm-banner:hover {
+  border-color: rgba(17, 133, 236, 0.55);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
 .dock-label {
   display: block;
   font-size: 0.68rem;
