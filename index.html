@@ -22,11 +22,18 @@
       <p class="eyebrow">SCUM · PvE</p>
       <h1 class="brand-hero-title">ОСТРОВ<br /><span>СУДЬБЫ</span></h1>
 
-      <div class="connect-panel">
-        <div class="connect-ip" id="copy-ip" role="button" tabindex="0" title="Нажмите, чтобы скопировать">
-          <span class="dock-label">IP сервера · нажмите, чтобы скопировать</span>
-          <code id="server-ip">37.150.212.7:7790</code>
-          <span class="copy-hint" id="copy-hint">Скопировать</span>
+      <div class="connect-panel connect-panel-clean">
+        <div class="live-online" id="live-online">
+          <span class="status-dot is-online" id="bm-dot" aria-hidden="true"></span>
+          <div class="live-online-text">
+            <span class="dock-label">Онлайн</span>
+            <strong><span id="bm-players">—</span><span class="status-max"> / <span id="bm-max">—</span></span></strong>
+          </div>
+        </div>
+
+        <div class="live-address">
+          <span class="dock-label">Адрес сервера</span>
+          <code>37.150.212.7:7790</code>
         </div>
 
         <div class="connect-links">
@@ -39,33 +46,6 @@
             <span>WarGM</span>
           </a>
         </div>
-
-        <a class="status-card" id="bm-status" href="https://www.battlemetrics.com/servers/scum/39271967" target="_blank" rel="noopener noreferrer">
-          <div class="status-card-top">
-            <span class="status-pill" id="bm-pill">
-              <span class="status-dot" id="bm-dot"></span>
-              <span id="bm-label">Загрузка…</span>
-            </span>
-            <span class="status-source">BattleMetrics</span>
-          </div>
-          <div class="status-card-main">
-            <div class="status-players">
-              <span class="dock-label">Онлайн</span>
-              <strong><span id="bm-players">—</span><span class="status-max"> / <span id="bm-max">—</span></span></strong>
-            </div>
-            <div class="status-rank">
-              <span class="dock-label">Ранг</span>
-              <strong id="bm-rank">—</strong>
-            </div>
-          </div>
-          <div class="status-bar" aria-hidden="true">
-            <span class="status-bar-fill" id="bm-bar"></span>
-          </div>
-          <div class="status-card-foot">
-            <span id="bm-name">Остров Судьбы</span>
-            <span class="status-open">Открыть →</span>
-          </div>
-        </a>
       </div>
     </div>
   </section>
