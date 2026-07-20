@@ -332,25 +332,146 @@ a:hover {
   box-shadow: 0 16px 32px var(--accent-dim);
 }
 
-.bm-banner {
+.status-card {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem 1.05rem 0.95rem;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(212, 184, 74, 0.22);
+  background:
+    radial-gradient(600px 120px at 100% 0%, rgba(212, 184, 74, 0.1), transparent 55%),
+    linear-gradient(160deg, rgba(16, 20, 16, 0.92), rgba(8, 10, 9, 0.78));
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.status-card:hover {
+  text-decoration: none;
+  color: inherit;
+  transform: translateY(-2px);
+  border-color: rgba(212, 184, 74, 0.5);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.status-card.is-online {
+  border-color: rgba(127, 191, 74, 0.35);
+}
+
+.status-card.is-offline {
+  border-color: rgba(196, 90, 58, 0.35);
+}
+
+.status-card-top,
+.status-card-main,
+.status-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.status-source {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.65rem;
+  border: 1px solid rgba(127, 191, 74, 0.35);
+  background: rgba(127, 191, 74, 0.1);
+  color: var(--online);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.status-pill.is-offline {
+  border-color: rgba(196, 90, 58, 0.4);
+  background: rgba(196, 90, 58, 0.1);
+  color: var(--offline);
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.status-dot.is-online {
+  background: var(--online);
+  box-shadow: 0 0 0 0 rgba(127, 191, 74, 0.5);
+  animation: pulseOnline 1.8s ease-out infinite;
+}
+
+.status-dot.is-offline {
+  background: var(--offline);
+}
+
+.status-players strong,
+.status-rank strong {
   display: block;
-  line-height: 0;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #1a1a1a;
+  margin-top: 0.15rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.85rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.status-players strong {
+  color: var(--accent);
+  text-shadow: 0 0 22px var(--accent-dim);
+}
+
+.status-max {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.status-rank {
+  text-align: right;
+}
+
+.status-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
   overflow: hidden;
-  transition: border-color 0.35s var(--ease), transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
 
-.bm-banner img {
-  width: 100%;
-  height: auto;
+.status-bar-fill {
   display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #8fbf4a, var(--accent));
+  box-shadow: 0 0 12px var(--accent-dim);
+  transition: width 0.8s var(--ease);
 }
 
-.bm-banner:hover {
-  border-color: rgba(17, 133, 236, 0.55);
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+.status-card-foot {
+  border-top: 1px solid var(--line);
+  padding-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.status-card-foot #bm-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+}
+
+.status-open {
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  flex-shrink: 0;
 }
 
 .dock-label {

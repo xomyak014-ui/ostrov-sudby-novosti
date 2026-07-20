@@ -40,14 +40,31 @@
           </a>
         </div>
 
-        <a class="bm-banner" href="https://www.battlemetrics.com/servers/scum/39271967" target="_blank" rel="noopener noreferrer" title="Статус на BattleMetrics">
-          <img
-            src="https://cdn.battlemetrics.com/b/horizontal500x80px/39271967.png?foreground=%23EEEEEE&background=%23222222&lines=%23333333&linkColor=%231185ec&chartColor=%23FF0700"
-            alt="Статус сервера Остров Судьбы на BattleMetrics"
-            width="500"
-            height="80"
-            loading="lazy"
-          />
+        <a class="status-card" id="bm-status" href="https://www.battlemetrics.com/servers/scum/39271967" target="_blank" rel="noopener noreferrer">
+          <div class="status-card-top">
+            <span class="status-pill" id="bm-pill">
+              <span class="status-dot" id="bm-dot"></span>
+              <span id="bm-label">Загрузка…</span>
+            </span>
+            <span class="status-source">BattleMetrics</span>
+          </div>
+          <div class="status-card-main">
+            <div class="status-players">
+              <span class="dock-label">Онлайн</span>
+              <strong><span id="bm-players">—</span><span class="status-max"> / <span id="bm-max">—</span></span></strong>
+            </div>
+            <div class="status-rank">
+              <span class="dock-label">Ранг</span>
+              <strong id="bm-rank">—</strong>
+            </div>
+          </div>
+          <div class="status-bar" aria-hidden="true">
+            <span class="status-bar-fill" id="bm-bar"></span>
+          </div>
+          <div class="status-card-foot">
+            <span id="bm-name">Остров Судьбы</span>
+            <span class="status-open">Открыть →</span>
+          </div>
         </a>
       </div>
     </div>
