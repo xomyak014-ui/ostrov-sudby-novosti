@@ -1159,24 +1159,6 @@ main {
   }
 }
 
-@media (max-width: 560px) {
-  .tabs .tab {
-    padding: 0.5rem 0.62rem;
-    font-size: 0.64rem;
-    letter-spacing: 0.08em;
-  }
-
-  .stat-strip {
-    gap: 0.55rem;
-  }
-
-  .copy-hint {
-    position: static;
-    display: inline-block;
-    margin-top: 0.45rem;
-  }
-}
-
 .divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--line), transparent);
