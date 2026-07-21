@@ -1,13 +1,24 @@
 (function () {
   const path = (location.pathname || "").replace(/\\/g, "/");
-  const onNews =
-    path.includes("/news") ||
-    path.endsWith("news.html") ||
-    path.includes("into-the-wild");
-  const active = onNews ? "news" : "home";
 
-  const homeHref = onNews && path.includes("/news/") ? "../index.html" : "index.html";
-  const newsHref = onNews && path.includes("/news/") ? "index.html" : "news/index.html";
+  function sectionOf(p) {
+    if (p.includes("/news") || p.endsWith("news.html") || p.includes("into-the-wild")) return "news";
+    if (p.includes("/settings")) return "settings";
+    if (p.includes("/rules")) return "rules";
+    return "home";
+  }
+
+  const active = sectionOf(path);
+  const inSub =
+    path.includes("/news/") || path.includes("/settings/") || path.includes("/rules/");
+  const root = inSub ? "../" : "";
+
+  const links = {
+    home: root + "index.html",
+    news: root + "news/index.html",
+    settings: root + "settings/index.html",
+    rules: root + "rules/index.html",
+  };
 
   const mount = document.querySelector("[data-site-nav]");
   if (mount) {
@@ -17,13 +28,23 @@
       '<a class="tab' +
       (active === "home" ? " is-active" : "") +
       '" href="' +
-      homeHref +
+      links.home +
       '" data-tab="home">Главная</a>' +
       '<a class="tab' +
       (active === "news" ? " is-active" : "") +
       '" href="' +
-      newsHref +
+      links.news +
       '" data-tab="news">Новости</a>' +
+      '<a class="tab' +
+      (active === "settings" ? " is-active" : "") +
+      '" href="' +
+      links.settings +
+      '" data-tab="settings">Настройки</a>' +
+      '<a class="tab' +
+      (active === "rules" ? " is-active" : "") +
+      '" href="' +
+      links.rules +
+      '" data-tab="rules">Правила</a>' +
       "</nav>";
 
     const tabs = mount.querySelector(".tabs");
@@ -59,7 +80,6 @@
     });
   }
 
-  // Nav glass denser on scroll
   const nav = document.querySelector(".site-nav");
   function onScroll() {
     if (!nav) return;
@@ -68,7 +88,6 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Soft page enter
   document.documentElement.classList.add("is-ready");
 
   const io = new IntersectionObserver(
@@ -83,7 +102,9 @@
     { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
   );
   document
-    .querySelectorAll(".reveal, .media, .video-wrap, .server-row, .news-card, .feature-row li")
+    .querySelectorAll(
+      ".reveal, .media, .video-wrap, .server-row, .news-card, .feature-row li, .info-block, .rule-block, .info-card, .stat-chip"
+    )
     .forEach(function (el) {
       io.observe(el);
     });
