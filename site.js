@@ -6,16 +6,12 @@
     path.includes("into-the-wild");
   const active = onNews ? "news" : "home";
 
-  const brandHref = onNews && path.includes("/news/") ? "../index.html" : "index.html";
-  const homeHref = brandHref;
+  const homeHref = onNews && path.includes("/news/") ? "../index.html" : "index.html";
   const newsHref = onNews && path.includes("/news/") ? "index.html" : "news/index.html";
 
   const mount = document.querySelector("[data-site-nav]");
   if (mount) {
     mount.innerHTML =
-      '<a class="brand" href="' +
-      brandHref +
-      '">ОСТРОВ <span>СУДЬБЫ</span></a>' +
       '<nav class="tabs" aria-label="Разделы сайта">' +
       '<span class="tabs-pill" aria-hidden="true"></span>' +
       '<a class="tab' +
