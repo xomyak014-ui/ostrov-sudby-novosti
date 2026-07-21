@@ -920,6 +920,43 @@ main {
   margin-top: 0.45rem;
 }
 
+.article .feature-list {
+  margin: 0.5rem 0 1.25rem;
+  padding-left: 1.2rem;
+  color: #d7ddd3;
+}
+
+.article .feature-list li + li {
+  margin-top: 0.55rem;
+}
+
+.article .feature-list ul {
+  margin-top: 0.45rem;
+  margin-bottom: 0.35rem;
+}
+
+.article blockquote {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(212, 184, 74, 0.06);
+  color: #d7ddd3;
+}
+
+.article details {
+  border: 1px solid var(--line);
+  background: rgba(16, 20, 16, 0.75);
+  padding: 0.85rem 1rem;
+}
+
+.article details summary {
+  cursor: pointer;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
 .note {
   padding: 1rem 1.15rem;
   border-left: 3px solid var(--offline);

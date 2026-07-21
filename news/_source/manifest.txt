@@ -1,0 +1,48 @@
+2026-07-20|1838407329265744|into-the-wild-july-update-1-3-2-0-134527|20548|SCUM: INTO THE WILD - July Update | 1.3.2.0.134527
+2026-07-15|1838407329254187|july-update-preview-new-tutorial-master-hunter-quests-m|6301|SCUM | July Update Preview: New Tutorial, Master Hunter Quests & Mutant Animals
+2026-07-14|1837955055366269|community-showcase-2026-07-14|8931|SCUM - Community Showcase
+2026-07-08|1836506165580739|hotfix-1-3-1-1-128880|3754|Hotfix - 1.3.1.1.128880
+2026-06-30|1836506165562633|into-the-wild-june-update-1-3-1-0-125621|33810|SCUM: INTO THE WILD - June Update | 1.3.1.0.125621
+2026-06-18|1835871199304330|public-alpha-update-new-free-roaming-wildlife-build-now|9878|SCUM | Public Alpha Update: New Free-Roaming Wildlife Build Now Live
+2026-06-12|1835236783563414|june-update-preview-free-roaming-animals-return|7800|SCUM | June Update Preview: Free-Roaming Animals Return
+2026-06-10|1835236783557308|community-showcase-2026-06-10|3812|SCUM - Community showcase
+2026-06-08|1834602721199153|hotfix-1-3-0-2-119181|4586|Hotfix - 1.3.0.2.119181
+2026-06-02|1833968530900378|community-showcase-2026-06-02|5192|SCUM - Community showcase
+2026-05-28|1833968530888249|hotfix-1-3-0-1-118271|4396|Hotfix - 1.3.0.1.118271
+2026-05-25|1833334318577138|into-the-wild-may-update-1-3-0-0-117753|26307|SCUM: INTO THE WILD - May Update | 1.3.0.0.117753
+2026-05-20|1833334318566226|into-the-wild-looking-ahead|5647|SCUM: INTO THE WILD - Looking Ahead
+2026-05-19|1832700592801066|a-new-chapter-begins|4518|SCUM: A New Chapter Begins
+2026-05-12|1832065502823740|community-showcase-2026-05-12|3932|SCUM - Community showcase
+2026-05-07|1832065502812189|hotfix-1-2-3-2-115523|761|Hotfix - 1.2.3.2.115523
+2026-05-05|1831432155579894|community-showcase-2026-05-05|4503|SCUM - Community showcase
+2026-04-29|1831432155565228|hotfix-1-2-3-1-114625|6600|Hotfix - 1.2.3.1.114625
+2026-04-23|1830797770233227|april-patch-is-officially-live-1-2-3-0-113582|29323|April patch is officially live! (1.2.3.0.113582)
+2026-04-21|1830163047268300|community-showcase-2026-04-21|3721|SCUM - Community showcase
+2026-04-16|1830163047257382|april-patch-announcement|5510|April patch announcement
+2026-04-14|1829528821317539|community-showcase-2026-04-14|3844|SCUM - Community showcase
+2026-04-07|1828894815567148|community-showcase-2026-04-07|4086|SCUM - Community showcase
+2026-03-31|1828441623111799|community-showcase-2026-03-31|3624|SCUM - Community showcase
+2026-03-27|1828441623104312|hotfix-1-2-2-2-109974|2553|Hotfix - 1.2.2.2.109974
+2026-03-24|1827626365765533|community-showcase-2026-03-24|3718|SCUM - Community showcase
+2026-03-20|1827626365757958|hotfix-1-2-2-1-108938|521|SCUM - Hotfix 1.2.2.1.108938
+2026-03-19|1827626365753708|march-qol-patch-available-now|17868|March QoL patch available now!
+2026-03-17|1826992588603827|community-showcase-2026-03-17|3966|SCUM - Community showcase
+2026-03-11|1826992588590017|qol-patch-and-wipe-coming-next-week|3618|QoL patch and wipe coming next week!
+2026-03-10|1826362059932851|community-showcase-2026-03-10|4190|SCUM - Community showcase
+2026-03-03|1825727806720111|community-showcase-2026-03-03|4630|SCUM - Community showcase
+2026-02-27|1825727806711643|update-on-playsafe-id|3261|SCUM - Update on PlaySafe ID
+2026-02-25|1825727806704549|community-showcase-2026-02-25|4774|SCUM - Community showcase
+2026-02-24|1825093633197834|hotfix-1-2-1-1-106289|1112|SCUM - Hotfix 1.2.1.1.106289
+2026-02-19|1825093633185238|lunar-new-year-update-1-2-1-0-106058|26618|SCUM - Lunar New year update 1.2.1.0.106058
+2026-02-17|1824644522847971|community-showcase-2026-02-17|4750|SCUM - Community showcase
+2026-02-10|1823825466508508|community-showcase-2026-02-10|4701|SCUM - Community showcase
+2026-02-09|1823825466506027|development-update|2860|SCUM - Development update
+2026-02-03|1823191198616770|community-showcase-2026-02-03|5173|SCUM - Community showcase
+2026-01-27|1822556746169075|community-showcase-2026-01-27|5147|SCUM - Community showcase
+2026-01-21|1822556746157013|hotfix-1-2-0-5-104391|789|SCUM - Hotfix 1.2.0.5.104391
+2026-01-20|1822556746155551|community-showcase-2026-01-20|4149|SCUM - Community showcase
+2026-01-19|1821922921821217|hotfix-1-2-0-4-104237|842|SCUM - Hotfix 1.2.0.4.104237
+2026-01-15|1821922921813140|hotfix-1-2-0-3-104129|987|SCUM - Hotfix 1.2.0.3.104129
+2026-01-14|1821922921810739|community-showcase-2026-01-14|3622|SCUM - Community showcase
+2026-01-13|1821288646588108|hotfix-1-2-0-2-104004|6112|SCUM - Hotfix 1.2.0.2.104004
+2026-01-07|1821288646576789|community-showcase-2026-01-07|3419|SCUM - Community showcase

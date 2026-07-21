@@ -17,5 +17,8 @@ Desktop.ini
 
 # Node
 node_modules/
-
 package-lock.json
+
+# Build caches (large translated bodies)
+news/_source/meta-ru.json
+news/_source/build.log

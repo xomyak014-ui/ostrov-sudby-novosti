@@ -6,6 +6,24 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "extract-news": "node tools/extract-steam-news.js",
+    "build-news": "node tools/build-news-pages.js",
+    "rebuild-news": "node tools/rebuild-from-meta.js",
     "install-autostart": "powershell -ExecutionPolicy Bypass -File ./install-autostart.ps1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xomyak014-ui/ostrov-sudby-novosti.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/xomyak014-ui/ostrov-sudby-novosti/issues"
+  },
+  "homepage": "https://github.com/xomyak014-ui/ostrov-sudby-novosti#readme",
+  "dependencies": {
+    "google-translate-api-x": "^10.7.3"
   }
 }
