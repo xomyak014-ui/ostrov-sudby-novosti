@@ -6,7 +6,7 @@
   <title>Остров Судьбы — PvE сервер SCUM</title>
   <meta name="description" content="Остров Судьбы — PvE сервер SCUM. IP 37.150.212.7:7790. Новости, настройки и правила." />
   <meta name="theme-color" content="#040708" />
-  <link rel="stylesheet" href="styles.css?v=21" />
+  <link rel="stylesheet" href="styles.css?v=22" />
 </head>
 <body class="page-home">
   <header class="site-nav" data-site-nav></header>
@@ -38,10 +38,11 @@
         <div class="live-online is-offline" id="live-online">
           <span class="status-dot is-offline" id="bm-dot" aria-hidden="true"></span>
           <div class="live-online-text">
-            <span>Онлайн сейчас</span>
+            <span id="bm-label">Статус сервера</span>
             <strong>
-              <span id="bm-players">—</span><span class="status-max"> / <span id="bm-max">—</span></span>
+              <span id="bm-players">—</span><span class="status-max"> / <span id="bm-max">30</span></span>
             </strong>
+            <small id="bm-updated" class="live-updated"></small>
           </div>
         </div>
         <div class="live-address" id="copy-ip" role="button" tabindex="0" title="Скопировать IP">
@@ -90,7 +91,7 @@
     <span>SCUM · PvE · 37.150.212.7:7790</span>
   </footer>
 
-  <script src="site.js?v=21"></script>
-  <script src="home.js?v=21"></script>
+  <script src="site.js?v=22"></script>
+  <script src="home.js?v=22"></script>
 </body>
 </html>

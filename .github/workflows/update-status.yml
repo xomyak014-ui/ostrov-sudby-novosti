@@ -17,26 +17,103 @@ jobs:
 
       - name: Fetch live status
         run: |
-          set +e
-          curl -fsS --max-time 12 "http://37.150.212.7:8080/api/status" -o /tmp/scum-status.json
-          CODE=$?
           set -e
-          if [ "$CODE" -ne 0 ]; then
-            echo "Manager unreachable, keeping previous status.json"
-            exit 0
-          fi
           node <<'NODE'
           const fs = require('fs');
-          const raw = JSON.parse(fs.readFileSync('/tmp/scum-status.json', 'utf8'));
-          const out = {
-            running: !!raw.running,
-            players: Number(raw.players || 0),
-            maxPlayers: Number(raw.maxPlayers || 50),
-            updatedAt: new Date().toISOString(),
-            source: 'manager'
-          };
-          fs.writeFileSync('status.json', JSON.stringify(out, null, 2) + '\n');
-          console.log(JSON.stringify(out));
+          const https = require('https');
+          const http = require('http');
+
+          const MANAGER = 'http://37.150.212.7:8080/api/status';
+          const WARGM_PAGE = 'https://wargm.ru/server/81248';
+          const DEFAULT_MAX = 30;
+
+          function fetchText(url, timeoutMs) {
+            return new Promise((resolve, reject) => {
+              const lib = url.startsWith('https') ? https : http;
+              const req = lib.get(url, { timeout: timeoutMs, headers: { 'User-Agent': 'ostrov-sudby-status/1.0' } }, (res) => {
+                if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                  fetchText(res.headers.location, timeoutMs).then(resolve, reject);
+                  res.resume();
+                  return;
+                }
+                if (res.statusCode !== 200) {
+                  reject(new Error('HTTP ' + res.statusCode + ' for ' + url));
+                  res.resume();
+                  return;
+                }
+                const chunks = [];
+                res.on('data', (c) => chunks.push(c));
+                res.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
+              });
+              req.on('timeout', () => {
+                req.destroy(new Error('timeout'));
+              });
+              req.on('error', reject);
+            });
+          }
+
+          function fromManager(raw) {
+            const players = Number(raw.players ?? raw.online ?? raw.numplayers ?? 0);
+            const maxPlayers = Number(raw.maxPlayers ?? raw.maxplayers ?? raw.max ?? DEFAULT_MAX) || DEFAULT_MAX;
+            const running = raw.running === true || raw.online === true || raw.status === 'online';
+            return {
+              running: !!running,
+              players: Number.isFinite(players) ? players : 0,
+              maxPlayers,
+              updatedAt: new Date().toISOString(),
+              source: 'manager',
+            };
+          }
+
+          function fromWargm(html) {
+            const tip = (html.match(/data-tooltip="(ONLINE|OFFLINE)"/i) || [])[1];
+            const ratio = html.match(/<span class="c-(?:red|green|orange)">\s*(\d+)\s*\/\s*(\d+)\s*<\/span>/i)
+              || html.match(/>(\d+)\s*\/\s*(30|50|64|100)</);
+            const players = ratio ? Number(ratio[1]) : 0;
+            const maxPlayers = ratio ? Number(ratio[2]) : DEFAULT_MAX;
+            const running = tip
+              ? tip.toUpperCase() === 'ONLINE'
+              : players > 0;
+            return {
+              running,
+              players: Number.isFinite(players) ? players : 0,
+              maxPlayers: Number.isFinite(maxPlayers) ? maxPlayers : DEFAULT_MAX,
+              updatedAt: new Date().toISOString(),
+              source: 'wargm',
+            };
+          }
+
+          (async () => {
+            let out = null;
+
+            try {
+              const text = await fetchText(MANAGER, 10000);
+              out = fromManager(JSON.parse(text));
+              console.log('manager ok', JSON.stringify(out));
+            } catch (e) {
+              console.log('manager failed:', e.message || e);
+            }
+
+            if (!out) {
+              try {
+                const html = await fetchText(WARGM_PAGE, 15000);
+                out = fromWargm(html);
+                console.log('wargm ok', JSON.stringify(out));
+              } catch (e) {
+                console.log('wargm failed:', e.message || e);
+              }
+            }
+
+            if (!out) {
+              console.log('All sources failed, keeping previous status.json');
+              process.exit(0);
+            }
+
+            fs.writeFileSync('status.json', JSON.stringify(out, null, 2) + '\n');
+          })().catch((err) => {
+            console.error(err);
+            process.exit(1);
+          });
           NODE
 
       - name: Commit status

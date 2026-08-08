@@ -8,7 +8,7 @@
     "ip": "37.150.212.7",
     "port": "7790",
     "statusApi": "http://37.150.212.7:8080/api/status",
-    "maxPlayers": 50,
+    "maxPlayers": 30,
     "description": "Основной PvE-сервер проекта. Выживание, крафт, охота и строительство.",
     "tags": ["PvE", "RU", "SCUM"]
   }

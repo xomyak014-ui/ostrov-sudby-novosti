@@ -1,1 +1,7 @@
-{"running":true,"players":1,"maxPlayers":50,"updatedAt":"2026-07-20T20:28:05Z","source":"manager"}
+{
+  "running": false,
+  "players": 0,
+  "maxPlayers": 30,
+  "updatedAt": "2026-08-08T18:31:01.947Z",
+  "source": "wargm"
+}

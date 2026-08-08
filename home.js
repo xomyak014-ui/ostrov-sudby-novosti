@@ -3,29 +3,85 @@
   const elMax = document.getElementById("bm-max");
   const elDot = document.getElementById("bm-dot");
   const elLive = document.getElementById("live-online");
+  const elLabel = document.getElementById("bm-label");
+  const elUpdated = document.getElementById("bm-updated");
   const copyIp = document.getElementById("copy-ip");
   const copyHint = copyIp ? copyIp.querySelector("[data-copy-hint]") : null;
   const IP = "37.150.212.7:7790";
+  const DEFAULT_MAX = 30;
+  const STALE_MS = 6 * 60 * 60 * 1000;
+
+  function setOfflineUi() {
+    if (elDot) elDot.className = "status-dot is-offline";
+    if (elLive) {
+      elLive.classList.add("is-offline");
+      elLive.classList.remove("is-online");
+    }
+    if (elLabel) elLabel.textContent = "Сервер оффлайн";
+  }
+
+  function setOnlineUi() {
+    if (elDot) elDot.className = "status-dot is-online";
+    if (elLive) {
+      elLive.classList.add("is-online");
+      elLive.classList.remove("is-offline");
+    }
+    if (elLabel) elLabel.textContent = "Онлайн сейчас";
+  }
+
+  function setUnknownUi() {
+    if (elDot) elDot.className = "status-dot is-offline";
+    if (elLive) {
+      elLive.classList.add("is-offline");
+      elLive.classList.remove("is-online");
+    }
+    if (elLabel) elLabel.textContent = "Статус недоступен";
+    if (elPlayers) elPlayers.textContent = "—";
+    if (elMax) elMax.textContent = String(DEFAULT_MAX);
+  }
+
+  function formatUpdated(iso) {
+    if (!iso) return "";
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return "";
+    try {
+      return "обновлено " + d.toLocaleString("ru-RU", {
+        day: "2-digit",
+        month: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+    } catch (e) {
+      return "";
+    }
+  }
 
   function applyStatus(data) {
-    if (!data || typeof data !== "object") return;
-    const online = !!data.running;
-    const players = Number(data.players);
-    const max = Number(data.maxPlayers) || 50;
+    if (!data || typeof data !== "object") {
+      setUnknownUi();
+      return;
+    }
 
-    if (elDot) {
-      elDot.className = "status-dot " + (online ? "is-online" : "is-offline");
+    const updatedAt = data.updatedAt ? Date.parse(data.updatedAt) : NaN;
+    const stale = !Number.isFinite(updatedAt) || Date.now() - updatedAt > STALE_MS;
+    if (stale) {
+      setUnknownUi();
+      if (elUpdated) elUpdated.textContent = "данные устарели";
+      return;
     }
-    if (elLive) {
-      elLive.classList.toggle("is-online", online);
-      elLive.classList.toggle("is-offline", !online);
-    }
+
+    const players = Number(data.players);
+    const max = Number(data.maxPlayers) || DEFAULT_MAX;
+    const online = data.running === true || data.online === true || data.status === "online";
+
+    if (online) setOnlineUi();
+    else setOfflineUi();
+
     if (elPlayers) {
-      elPlayers.textContent = Number.isFinite(players) ? String(players) : "—";
+      elPlayers.textContent = Number.isFinite(players) ? String(Math.max(0, players)) : "—";
     }
-    if (elMax) {
-      elMax.textContent = String(max);
-    }
+    if (elMax) elMax.textContent = String(max);
+    if (elUpdated) elUpdated.textContent = formatUpdated(data.updatedAt);
   }
 
   async function refresh() {
@@ -37,13 +93,8 @@
       const data = await res.json();
       applyStatus(data);
     } catch (e) {
-      if (elPlayers) elPlayers.textContent = "—";
-      if (elMax) elMax.textContent = "—";
-      if (elDot) elDot.className = "status-dot is-offline";
-      if (elLive) {
-        elLive.classList.add("is-offline");
-        elLive.classList.remove("is-online");
-      }
+      setUnknownUi();
+      if (elUpdated) elUpdated.textContent = "";
     }
   }
 

@@ -545,6 +545,15 @@ a:hover {
   text-shadow: 0 0 28px var(--accent-dim);
 }
 
+.live-updated {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: none;
+}
+
 .status-max {
   color: var(--muted);
   font-size: 0.55em;
