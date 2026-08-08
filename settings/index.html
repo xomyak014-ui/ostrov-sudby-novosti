@@ -2,34 +2,27 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="theme-color" content="#060807" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Настройки сервера — Остров Судьбы</title>
-  <meta name="description" content="Настройки PvE-сервера Остров Судьбы: лут x1.5, моды, транспорт, команды и бонусы." />
-  <link rel="stylesheet" href="../styles.css?v=100" />
+  <meta name="description" content="Настройки PvE-сервера Остров Судьбы: лут, моды, транспорт и команды." />
+  <meta name="theme-color" content="#0a0b0a" />
+  <link rel="stylesheet" href="../app.css?v=1" />
 </head>
 <body>
-  <header class="site-nav" data-site-nav></header>
-  <div class="page-shell">
-  <section class="page-banner">
-    <div class="hero-media">
-      <img src="../assets/hero.png" alt="" />
-      <div class="hero-mist" aria-hidden="true"></div>
-      <div class="hero-rays" aria-hidden="true"></div>
-      <div class="hero-vignette" aria-hidden="true"></div>
-    </div>
-    <div class="page-banner-content">
-      <p class="section-kicker">SCUM · PvE RU</p>
-      <h1 class="page-title">Настройки сервера</h1>
-      <p class="page-sub">
-        Остров Судьбы — PvE RU | Loot ×1.5 | Mods. Спокойное выживание без PvP.
-      </p>
-      <p class="info-ip"><code>37.150.212.7:7790</code></p>
-    </div>
-  </section>
+  <header class="top" data-nav></header>
+  <div class="wrap">
+    <section class="banner">
+      <div class="bg"><img src="../assets/hero.png" alt="" /></div>
+      <div class="txt">
+        <p class="tag">SCUM · PvE RU</p>
+        <h1>Настройки</h1>
+        <p>Loot ×1.5 · Mods · спокойное выживание без PvP</p>
+        <code class="ip">37.150.212.7:7790</code>
+      </div>
+    </section>
+    <main class="main narrow">
 
-  <main class="page info-page">
-    <p class="lead reveal">
+    <p class="lead fade">
       Добро пожаловать на «Остров Судьбы» — спокойный PvE-сервер для долгого выживания.
       Здесь нет PvP: база и лут в безопасности. Лут переработан под логику мира,
       зомби распределены по зонам, а опасные локации дают больше награды.
@@ -37,16 +30,16 @@
       и комфортные настройки для спокойной игры.
     </p>
 
-    <div class="stat-strip reveal">
-      <div class="stat-chip"><span>Режим</span><strong>PvE</strong></div>
-      <div class="stat-chip"><span>Слоты</span><strong>30</strong></div>
-      <div class="stat-chip"><span>Лут</span><strong>×1.5</strong></div>
-      <div class="stat-chip"><span>Скиллы</span><strong>×5</strong></div>
+    <div class="stats fade">
+      <div class="stat"><small>Режим</small><b>PvE</b></div>
+      <div class="stat"><small>Слоты</small><b>30</b></div>
+      <div class="stat"><small>Лут</small><b>×1.5</b></div>
+      <div class="stat"><small>Скиллы</small><b>×5</b></div>
     </div>
 
-    <section class="info-block reveal">
-      <h2 class="section-title">Основные параметры</h2>
-      <ul class="info-list">
+    <section class="block fade">
+      <h2 class="h2">Основные параметры</h2>
+      <ul class="list">
         <li>Режим: PvE, 30 слотов</li>
         <li>Лут: ×1.5</li>
         <li>Прокачка скиллов: ×5</li>
@@ -65,48 +58,48 @@
       </ul>
     </section>
 
-    <section class="info-block reveal">
-      <h2 class="section-title">Лут и зомби</h2>
-      <p class="info-intro">Переработан лут с заражённых — у каждого типа свой набор:</p>
-      <div class="info-grid">
-        <article class="info-card">
+    <section class="block fade">
+      <h2 class="h2">Лут и зомби</h2>
+      <p class="note">Переработан лут с заражённых — у каждого типа свой набор:</p>
+      <div class="grid">
+        <article class="card">
           <h3>Гражданские</h3>
           <p>Одежда, еда, бытовые вещи</p>
         </article>
-        <article class="info-card">
+        <article class="card">
           <h3>Полиция</h3>
           <p>Форма, броня, пистолеты и патроны</p>
         </article>
-        <article class="info-card">
+        <article class="card">
           <h3>Военные</h3>
           <p>Экипировка, оружие, гранаты, обвесы</p>
         </article>
-        <article class="info-card">
+        <article class="card">
           <h3>Медики</h3>
           <p>Бинты, таблетки, лечение</p>
         </article>
-        <article class="info-card">
+        <article class="card">
           <h3>ЧАЭС</h3>
           <p>Химзащита, дозиметры, редкая медицина</p>
         </article>
-        <article class="info-card">
+        <article class="card">
           <h3>С рюкзаком</h3>
           <p>Много целых предметов за один обыск</p>
         </article>
-        <article class="info-card info-card-accent">
+        <article class="card hot">
           <h3>Razer</h3>
           <p>Редкий элитный лут</p>
         </article>
       </div>
-      <ul class="info-list" style="margin-top:1.25rem">
+      <ul class="list" style="margin-top:1.25rem">
         <li>Переработан спавн зомби и NPC на всех территориях, добавлено оружие</li>
         <li>Везде своеобразный спавн зомби и NPC — обдумывайте вылазки</li>
       </ul>
     </section>
 
-    <section class="info-block reveal">
-      <h2 class="section-title">Локации</h2>
-      <ul class="info-list">
+    <section class="block fade">
+      <h2 class="h2">Локации</h2>
+      <ul class="list">
         <li>Секретные бункеры — одежда, оружие, патроны без пустых контейнеров</li>
         <li>Бренер — щедрее обычного; внизу есть шанс найти заряженный модуль памяти</li>
         <li>ЧАЭС — повышено выпадение урана и графита</li>
@@ -116,21 +109,21 @@
       </ul>
     </section>
 
-    <section class="info-block reveal">
-      <h2 class="section-title">Строительство и транспорт</h2>
-      <div class="info-grid info-grid-2">
-        <article class="info-card">
+    <section class="block fade">
+      <h2 class="h2">Строительство и транспорт</h2>
+      <div class="grid two">
+        <article class="card">
           <h3>База</h3>
-          <ul class="info-list tight">
+          <ul class="list">
             <li>1 флаг на игрока</li>
             <li>500 элементов (+расширение до 1000)</li>
             <li>Отступ от дороги: минимум 5 фундаментов</li>
             <li>Мины запрещены</li>
           </ul>
         </article>
-        <article class="info-card">
+        <article class="card">
           <h3>Транспорт</h3>
-          <ul class="info-list tight">
+          <ul class="list">
             <li>Весь транспорт спавнится сразу с двигателями</li>
             <li>Пикап Rager на карте не спавнится — только у торговцев</li>
             <li>Лимит: 1 штука каждого типа на игрока</li>
@@ -142,9 +135,9 @@
       </div>
     </section>
 
-    <section class="info-block reveal">
-      <h2 class="section-title">Моды</h2>
-      <ul class="info-list">
+    <section class="block fade">
+      <h2 class="h2">Моды</h2>
+      <ul class="list">
         <li>Большой генератор — радиус 80 м, 1000 Вт</li>
         <li>Малый генератор — радиус 15 м, 500 Вт</li>
         <li>Карта с метками (заправки, бункеры) — по желанию, инструкция в Discord</li>
@@ -155,50 +148,49 @@
       </ul>
     </section>
 
-    <section class="info-block reveal">
-      <h2 class="section-title">Команды чата и функции</h2>
-      <div class="info-grid">
-        <article class="info-card info-card-accent">
+    <section class="block fade">
+      <h2 class="h2">Команды чата и функции</h2>
+      <div class="grid">
+        <article class="card hot">
           <h3>Старт-пакет</h3>
           <p>Команда <code class="cmd">!стартпак</code> — стартовый мини-набор. Каждые 12 часов.</p>
         </article>
-        <article class="info-card info-card-accent">
+        <article class="card hot">
           <h3>Рулетка</h3>
           <p>Команда <code class="cmd">!рулетка</code> — случайный лут. Каждые 6 часов.</p>
         </article>
-        <article class="info-card">
+        <article class="card">
           <h3>За онлайн</h3>
           <p>За каждый отыгранный час на банковский счёт падает бонус.</p>
         </article>
-        <article class="info-card">
+        <article class="card">
           <h3>Казино</h3>
           <p>Команда <code class="cmd">!казино</code> и любая сумма — шанс удвоить ставку 50/50.</p>
         </article>
-        <article class="info-card">
+        <article class="card">
           <h3>Аренда авто</h3>
           <p>Команда <code class="cmd">!аренда</code> — аренда транспорта за очки славы на 1 час.</p>
         </article>
       </div>
     </section>
 
-    <div class="info-links reveal">
-      <a class="link-chip link-wargm" href="https://wargm.ru/server/81248" target="_blank" rel="noopener noreferrer">WarGM</a>
-      <a class="link-chip link-discord" href="https://discord.gg/df8m4UmWmp" target="_blank" rel="noopener noreferrer">Discord</a>
-      <a class="link-chip link-wargm" href="https://wargm.ru/server/81248/shop" target="_blank" rel="noopener noreferrer">Магазин</a>
+    <div class="row fade">
+      <a class="chip wargm" href="https://wargm.ru/server/81248" target="_blank" rel="noopener noreferrer">WarGM</a>
+      <a class="chip discord" href="https://discord.gg/df8m4UmWmp" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a class="chip wargm" href="https://wargm.ru/server/81248/shop" target="_blank" rel="noopener noreferrer">Магазин</a>
     </div>
 
     <p class="reveal source-note">
       Источник:
       <a href="https://wargm.ru/server/81248" target="_blank" rel="noopener">wargm.ru/server/81248</a>
     </p>
-  </main>
+  
+    </main>
   </div>
-
-  <footer class="footer">
+  <footer class="foot">
     <strong>ОСТРОВ СУДЬБЫ</strong>
     <a href="../index.html">На главную</a>
   </footer>
-
-  <script src="../site.js?v=100"></script>
+  <script src="../app.js?v=1"></script>
 </body>
 </html>

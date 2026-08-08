@@ -2,7 +2,6 @@
   const elPlayers = document.getElementById("bm-players");
   const elMax = document.getElementById("bm-max");
   const elDot = document.getElementById("bm-dot");
-  const elLive = document.getElementById("live-online");
   const elLabel = document.getElementById("bm-label");
   const elUpdated = document.getElementById("bm-updated");
   const copyIp = document.getElementById("copy-ip");
@@ -11,26 +10,12 @@
   const DEFAULT_MAX = 30;
   const STALE_MS = 6 * 60 * 60 * 1000;
 
-  function setOffline() {
-    if (elDot) elDot.className = "status-dot is-offline";
-    if (elLive) {
-      elLive.classList.add("is-offline");
-      elLive.classList.remove("is-online");
-    }
-    if (elLabel) elLabel.textContent = "Сервер оффлайн";
-  }
-
-  function setOnline() {
-    if (elDot) elDot.className = "status-dot is-online";
-    if (elLive) {
-      elLive.classList.add("is-online");
-      elLive.classList.remove("is-offline");
-    }
-    if (elLabel) elLabel.textContent = "Онлайн сейчас";
+  function setDot(online) {
+    if (elDot) elDot.className = "dot " + (online ? "on" : "off");
   }
 
   function setUnknown() {
-    setOffline();
+    setDot(false);
     if (elLabel) elLabel.textContent = "Статус недоступен";
     if (elPlayers) elPlayers.textContent = "—";
     if (elMax) elMax.textContent = String(DEFAULT_MAX);
@@ -71,9 +56,8 @@
     const max = Number(data.maxPlayers) || DEFAULT_MAX;
     const online = data.running === true || data.online === true || data.status === "online";
 
-    if (online) setOnline();
-    else setOffline();
-
+    setDot(online);
+    if (elLabel) elLabel.textContent = online ? "Онлайн" : "Оффлайн";
     if (elPlayers) elPlayers.textContent = Number.isFinite(players) ? String(Math.max(0, players)) : "—";
     if (elMax) elMax.textContent = String(max);
     if (elUpdated) elUpdated.textContent = formatUpdated(data.updatedAt);
@@ -84,7 +68,7 @@
       const url = new URL("status.json", window.location.href);
       url.searchParams.set("t", String(Date.now()));
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (!res.ok) throw new Error("bad status");
+      if (!res.ok) throw new Error("bad");
       applyStatus(await res.json());
     } catch (e) {
       setUnknown();
@@ -105,14 +89,12 @@
         document.execCommand("copy");
         document.body.removeChild(ta);
       }
-      copyIp.classList.add("is-copied");
       if (copyHint) copyHint.textContent = "Скопировано";
       setTimeout(function () {
-        copyIp.classList.remove("is-copied");
-        if (copyHint) copyHint.textContent = "Нажми, чтобы скопировать";
-      }, 1600);
+        if (copyHint) copyHint.textContent = "Скопировать";
+      }, 1500);
     } catch (e) {
-      if (copyHint) copyHint.textContent = "Выдели IP вручную";
+      if (copyHint) copyHint.textContent = "Выдели IP";
     }
   }
 

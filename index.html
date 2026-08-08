@@ -4,88 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Остров Судьбы — PvE сервер SCUM</title>
-  <meta name="description" content="Остров Судьбы — спокойный PvE сервер SCUM. Лут ×1.5, моды, новости и правила. IP 37.150.212.7:7790" />
-  <meta name="theme-color" content="#060807" />
-  <link rel="stylesheet" href="styles.css?v=100" />
+  <meta name="description" content="Остров Судьбы — спокойный PvE сервер SCUM. Лут ×1.5, моды. IP 37.150.212.7:7790" />
+  <meta name="theme-color" content="#0a0b0a" />
+  <link rel="stylesheet" href="app.css?v=1" />
 </head>
-<body class="page-home">
-  <header class="site-nav" data-site-nav></header>
+<body>
+  <header class="top" data-nav></header>
 
-  <section class="home-hero">
-    <div class="home-hero-bg" aria-hidden="true">
+  <section class="splash">
+    <div class="splash-bg" aria-hidden="true">
       <img src="assets/hero.png" alt="" fetchpriority="high" />
-      <div class="home-hero-shade"></div>
     </div>
-    <div class="home-hero-inner">
-      <p class="home-kicker">SCUM · PvE RU · Loot ×1.5</p>
-      <h1 class="home-title">Остров<br /><span>Судьбы</span></h1>
-      <p class="home-tagline">Спокойное выживание без PvP. База в безопасности, мир живой, награда за риск.</p>
-      <div class="home-actions">
-        <a class="btn" href="#connect">Подключиться</a>
-        <a class="btn btn-ghost" href="news/index.html">Новости</a>
+    <div class="splash-box">
+      <p class="tag">SCUM · PvE · RU</p>
+      <h1>ОСТРОВ<br /><span>СУДЬБЫ</span></h1>
+      <p class="line">Спокойное выживание без PvP. Лут ×1.5, моды, своя атмосфера острова.</p>
+      <div class="acts">
+        <a class="btn" href="#go">Играть</a>
+        <a class="btn ghost" href="https://discord.gg/df8m4UmWmp" target="_blank" rel="noopener noreferrer">Discord</a>
       </div>
     </div>
   </section>
 
-  <section class="home-panel" id="connect">
-    <div class="home-grid">
-      <div class="status-board reveal">
-        <div class="live-online is-offline" id="live-online">
-          <span class="status-dot is-offline" id="bm-dot" aria-hidden="true"></span>
-          <div class="live-online-text">
-            <span id="bm-label">Статус сервера</span>
-            <strong>
-              <span id="bm-players">—</span><span class="status-max"> / <span id="bm-max">30</span></span>
-            </strong>
-            <small id="bm-updated" class="live-updated"></small>
-          </div>
+  <section class="board" id="go">
+    <div class="hud fade">
+      <div class="hud-cell" id="live-online">
+        <span class="lbl" id="bm-label">Статус</span>
+        <div class="val">
+          <span class="dot off" id="bm-dot" aria-hidden="true"></span>
+          <span><span id="bm-players">—</span><span style="color:var(--mute);font-size:.55em"> / <span id="bm-max">30</span></span></span>
         </div>
-        <div class="live-address" id="copy-ip" role="button" tabindex="0" title="Скопировать IP">
-          <span class="dock-label">Адрес сервера</span>
-          <code>37.150.212.7:7790</code>
-          <span class="copy-hint" data-copy-hint>Нажми, чтобы скопировать</span>
-        </div>
+        <small class="hint" id="bm-updated" style="color:var(--mute);letter-spacing:0;text-transform:none"></small>
       </div>
-
-      <div class="connect-row reveal">
-        <a class="link-chip link-discord" href="https://discord.gg/df8m4UmWmp" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.07.07 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.07.07 0 0 0-.078-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.08.08 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.08.08 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.08.08 0 0 1-.008-.132c.126-.094.252-.193.372-.292a.07.07 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .079.01c.12.099.246.198.373.292a.08.08 0 0 1-.006.133 12.3 12.3 0 0 1-1.873.891.08.08 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.08.08 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.08.08 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-          Discord
-        </a>
-        <a class="link-chip link-wargm" href="https://wargm.ru/server/81248" target="_blank" rel="noopener noreferrer">
-          WarGM
-        </a>
+      <div class="hud-cell copy" id="copy-ip" role="button" tabindex="0">
+        <span class="lbl">IP сервера</span>
+        <code>37.150.212.7:7790</code>
+        <span class="hint" data-copy-hint>Скопировать</span>
       </div>
+    </div>
 
-      <div class="route-grid">
-        <a class="route-card reveal" href="news/index.html">
-          <em>Лента</em>
+    <div class="links fade">
+      <a class="chip discord" href="https://discord.gg/df8m4UmWmp" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a class="chip wargm" href="https://wargm.ru/server/81248" target="_blank" rel="noopener noreferrer">WarGM</a>
+    </div>
+
+    <div class="ways">
+      <a class="way fade" href="news/index.html">
+        <div>
           <strong>Новости</strong>
-          <p>Патчи SCUM с переводом для игроков острова.</p>
-          <span class="arrow">Открыть →</span>
-        </a>
-        <a class="route-card reveal" href="settings/index.html">
-          <em>Мир</em>
+          <span>Патчи SCUM с переводом</span>
+        </div>
+        <i>Открыть</i>
+      </a>
+      <a class="way fade" href="settings/index.html">
+        <div>
           <strong>Настройки</strong>
-          <p>Лут, моды, транспорт, команды и бонусы.</p>
-          <span class="arrow">Открыть →</span>
-        </a>
-        <a class="route-card reveal" href="rules/index.html">
-          <em>Порядок</em>
+          <span>Лут, моды, команды</span>
+        </div>
+        <i>Открыть</i>
+      </a>
+      <a class="way fade" href="rules/index.html">
+        <div>
           <strong>Правила</strong>
-          <p>Честная игра, дропы, базы и общение.</p>
-          <span class="arrow">Открыть →</span>
-        </a>
-      </div>
+          <span>Порядок на острове</span>
+        </div>
+        <i>Открыть</i>
+      </a>
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="foot">
     <strong>ОСТРОВ СУДЬБЫ</strong>
-    <span>SCUM · PvE · 37.150.212.7:7790</span>
+    <span>37.150.212.7:7790</span>
   </footer>
 
-  <script src="site.js?v=100"></script>
-  <script src="home.js?v=100"></script>
+  <script src="app.js?v=1"></script>
+  <script src="home.js?v=1"></script>
 </body>
 </html>
