@@ -758,7 +758,7 @@ a:hover {
 
 .news-hero .hero-media img,
 .info-hero .hero-media img {
-  animation: heroKen 36s var(--ease) infinite alternate;
+  animation: homeBgDrift 36s ease-in-out infinite alternate;
   filter: contrast(1.06) saturate(0.85) brightness(0.75);
 }
 
