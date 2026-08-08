@@ -1,7 +1,7 @@
 [
   {
     "id": "ostrov-sudby-pve",
-    "name": "Остров Судьбы | PvE",
+    "name": "Остров Судьбы PVE RU - 1.5 Loot - Mods",
     "mode": "PvE",
     "status": "online",
     "region": "RU",
@@ -9,7 +9,7 @@
     "port": "7790",
     "statusApi": "http://37.150.212.7:8080/api/status",
     "maxPlayers": 30,
-    "description": "Основной PvE-сервер проекта. Выживание, крафт, охота и строительство.",
-    "tags": ["PvE", "RU", "SCUM"]
+    "description": "Спокойный PvE-сервер для долгого выживания. Лут ×1.5, скиллы ×5, моды, без PvP.",
+    "tags": ["PvE", "RU", "SCUM", "Loot x1.5", "Mods"]
   }
 ]
