@@ -1,9 +1,9 @@
 (function () {
   const path = (location.pathname || "").replace(/\\/g, "/");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function sectionOf(p) {
-    if (p.includes("/news") || p.endsWith("news.html") || p.includes("into-the-wild")) return "news";
+    if (p.includes("/news") || p.includes("into-the-wild")) return "news";
     if (p.includes("/settings")) return "settings";
     if (p.includes("/rules")) return "rules";
     return "home";
@@ -24,78 +24,47 @@
   const mount = document.querySelector("[data-site-nav]");
   if (mount) {
     mount.innerHTML =
-      '<nav class="tabs" aria-label="Разделы сайта">' +
-      '<span class="tabs-pill" aria-hidden="true"></span>' +
+      '<a class="nav-brand" href="' +
+      links.home +
+      '">ОСТРОВ <span>СУДЬБЫ</span></a>' +
+      '<nav class="tabs" aria-label="Разделы">' +
       '<a class="tab' +
       (active === "home" ? " is-active" : "") +
       '" href="' +
       links.home +
-      '" data-tab="home">Главная</a>' +
+      '">Главная</a>' +
       '<a class="tab' +
       (active === "news" ? " is-active" : "") +
       '" href="' +
       links.news +
-      '" data-tab="news">Новости</a>' +
+      '">Новости</a>' +
       '<a class="tab' +
       (active === "settings" ? " is-active" : "") +
       '" href="' +
       links.settings +
-      '" data-tab="settings">Настройки</a>' +
+      '">Настройки</a>' +
       '<a class="tab' +
       (active === "rules" ? " is-active" : "") +
       '" href="' +
       links.rules +
-      '" data-tab="rules">Правила</a>' +
+      '">Правила</a>' +
       "</nav>";
-
-    const tabs = mount.querySelector(".tabs");
-    const pill = mount.querySelector(".tabs-pill");
-
-    function movePill(target) {
-      if (!tabs || !pill || !target) return;
-      const tabRect = target.getBoundingClientRect();
-      const tabsRect = tabs.getBoundingClientRect();
-      pill.style.width = tabRect.width + "px";
-      pill.style.height = tabRect.height + "px";
-      pill.style.transform = "translateX(" + (tabRect.left - tabsRect.left) + "px)";
-      pill.classList.add("is-ready");
-    }
-
-    function syncPill() {
-      const current = tabs.querySelector(".tab.is-active") || tabs.querySelector(".tab");
-      movePill(current);
-    }
-
-    tabs.querySelectorAll(".tab").forEach(function (tab) {
-      tab.addEventListener("mouseenter", function () {
-        movePill(tab);
-      });
-      tab.addEventListener("focus", function () {
-        movePill(tab);
-      });
-    });
-    tabs.addEventListener("mouseleave", syncPill);
-    window.addEventListener("resize", syncPill);
-    requestAnimationFrame(function () {
-      requestAnimationFrame(syncPill);
-    });
   }
 
   const nav = document.querySelector(".site-nav");
   function onScroll() {
-    if (!nav) return;
-    nav.classList.toggle("is-scrolled", window.scrollY > 24);
+    if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 16);
   }
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
   document.documentElement.classList.add("is-ready");
 
-  const revealSelector =
-    ".reveal, .media, .video-wrap, .server-row, .news-card, .feature-row li, .info-block, .rule-block, .info-card, .stat-chip, .news-item, .explore-card, .live-panel, .connect-links";
+  const sel =
+    ".reveal, .news-item, .route-card, .status-board, .connect-row, .info-block, .rule-block, .info-card, .stat-chip, .media, .video-wrap";
 
-  if (reduceMotion) {
-    document.querySelectorAll(revealSelector).forEach(function (el) {
+  if (reduce) {
+    document.querySelectorAll(sel).forEach(function (el) {
       el.classList.add("is-in");
     });
   } else {
@@ -108,9 +77,9 @@
           }
         });
       },
-      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
     );
-    document.querySelectorAll(revealSelector).forEach(function (el) {
+    document.querySelectorAll(sel).forEach(function (el) {
       io.observe(el);
     });
   }

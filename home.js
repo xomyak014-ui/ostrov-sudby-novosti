@@ -11,7 +11,7 @@
   const DEFAULT_MAX = 30;
   const STALE_MS = 6 * 60 * 60 * 1000;
 
-  function setOfflineUi() {
+  function setOffline() {
     if (elDot) elDot.className = "status-dot is-offline";
     if (elLive) {
       elLive.classList.add("is-offline");
@@ -20,7 +20,7 @@
     if (elLabel) elLabel.textContent = "Сервер оффлайн";
   }
 
-  function setOnlineUi() {
+  function setOnline() {
     if (elDot) elDot.className = "status-dot is-online";
     if (elLive) {
       elLive.classList.add("is-online");
@@ -29,12 +29,8 @@
     if (elLabel) elLabel.textContent = "Онлайн сейчас";
   }
 
-  function setUnknownUi() {
-    if (elDot) elDot.className = "status-dot is-offline";
-    if (elLive) {
-      elLive.classList.add("is-offline");
-      elLive.classList.remove("is-online");
-    }
+  function setUnknown() {
+    setOffline();
     if (elLabel) elLabel.textContent = "Статус недоступен";
     if (elPlayers) elPlayers.textContent = "—";
     if (elMax) elMax.textContent = String(DEFAULT_MAX);
@@ -45,12 +41,15 @@
     const d = new Date(iso);
     if (Number.isNaN(d.getTime())) return "";
     try {
-      return "обновлено " + d.toLocaleString("ru-RU", {
-        day: "2-digit",
-        month: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-      });
+      return (
+        "обновлено " +
+        d.toLocaleString("ru-RU", {
+          day: "2-digit",
+          month: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+        })
+      );
     } catch (e) {
       return "";
     }
@@ -58,14 +57,12 @@
 
   function applyStatus(data) {
     if (!data || typeof data !== "object") {
-      setUnknownUi();
+      setUnknown();
       return;
     }
-
     const updatedAt = data.updatedAt ? Date.parse(data.updatedAt) : NaN;
-    const stale = !Number.isFinite(updatedAt) || Date.now() - updatedAt > STALE_MS;
-    if (stale) {
-      setUnknownUi();
+    if (!Number.isFinite(updatedAt) || Date.now() - updatedAt > STALE_MS) {
+      setUnknown();
       if (elUpdated) elUpdated.textContent = "данные устарели";
       return;
     }
@@ -74,12 +71,10 @@
     const max = Number(data.maxPlayers) || DEFAULT_MAX;
     const online = data.running === true || data.online === true || data.status === "online";
 
-    if (online) setOnlineUi();
-    else setOfflineUi();
+    if (online) setOnline();
+    else setOffline();
 
-    if (elPlayers) {
-      elPlayers.textContent = Number.isFinite(players) ? String(Math.max(0, players)) : "—";
-    }
+    if (elPlayers) elPlayers.textContent = Number.isFinite(players) ? String(Math.max(0, players)) : "—";
     if (elMax) elMax.textContent = String(max);
     if (elUpdated) elUpdated.textContent = formatUpdated(data.updatedAt);
   }
@@ -89,11 +84,10 @@
       const url = new URL("status.json", window.location.href);
       url.searchParams.set("t", String(Date.now()));
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (!res.ok) throw new Error("status " + res.status);
-      const data = await res.json();
-      applyStatus(data);
+      if (!res.ok) throw new Error("bad status");
+      applyStatus(await res.json());
     } catch (e) {
-      setUnknownUi();
+      setUnknown();
       if (elUpdated) elUpdated.textContent = "";
     }
   }
@@ -106,9 +100,6 @@
       } else {
         const ta = document.createElement("textarea");
         ta.value = IP;
-        ta.setAttribute("readonly", "");
-        ta.style.position = "absolute";
-        ta.style.left = "-9999px";
         document.body.appendChild(ta);
         ta.select();
         document.execCommand("copy");
