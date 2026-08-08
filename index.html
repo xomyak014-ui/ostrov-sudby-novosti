@@ -6,53 +6,42 @@
   <title>Остров Судьбы — PvE сервер SCUM</title>
   <meta name="description" content="Остров Судьбы — PvE сервер SCUM. IP 37.150.212.7:7790. Новости, настройки и правила." />
   <meta name="theme-color" content="#040708" />
-  <link rel="stylesheet" href="styles.css?v=20" />
+  <link rel="stylesheet" href="styles.css?v=21" />
 </head>
 <body class="page-home">
-  <div class="cursor-glow" aria-hidden="true"></div>
   <header class="site-nav" data-site-nav></header>
 
-  <section class="hero hero-brand">
-    <div class="hero-media" data-parallax>
-      <img src="assets/hero.png" alt="Остров Судьбы" fetchpriority="high" />
-      <div class="hero-scan" aria-hidden="true"></div>
-      <div class="hero-mist" aria-hidden="true"></div>
-      <div class="hero-rays" aria-hidden="true"></div>
-      <div class="hero-vignette" aria-hidden="true"></div>
-      <div class="hero-particles" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
+  <section class="home-hero">
+    <div class="home-hero-bg" aria-hidden="true">
+      <img src="assets/hero.png" alt="" fetchpriority="high" />
+      <div class="home-hero-shade"></div>
     </div>
 
-    <div class="hero-stage">
-      <p class="eyebrow">SCUM · PvE · ВЫЖИВАНИЕ</p>
-      <h1 class="brand-hero-title" data-split>
-        <span class="line">ОСТРОВ</span>
-        <span class="line">СУДЬБЫ</span>
+    <div class="home-hero-inner">
+      <p class="home-kicker">SCUM · PvE · ВЫЖИВАНИЕ</p>
+      <h1 class="home-title">
+        ОСТРОВ<br />
+        <span>СУДЬБЫ</span>
       </h1>
-      <p class="survival-mark">Где каждый день — испытание</p>
-      <div class="survival-rule" aria-hidden="true"></div>
+      <p class="home-tagline">Где каждый день — испытание</p>
 
-      <div class="hero-cta">
+      <div class="home-actions">
         <a class="btn" href="#connect">Подключиться</a>
         <a class="btn btn-ghost" href="https://discord.gg/Aq4wKQeZWn" target="_blank" rel="noopener noreferrer">Discord</a>
       </div>
     </div>
-
-    <div class="scroll-hint" aria-hidden="true">
-      <span>Дальше</span>
-      <i></i>
-    </div>
   </section>
 
-  <section class="home-dock" id="connect">
-    <div class="dock-shell">
+  <section class="home-panel" id="connect">
+    <div class="home-panel-inner">
       <div class="live-panel reveal">
         <div class="live-online is-offline" id="live-online">
           <span class="status-dot is-offline" id="bm-dot" aria-hidden="true"></span>
           <div class="live-online-text">
             <span>Онлайн сейчас</span>
-            <strong><span id="bm-players">—</span><span class="status-max"> / <span id="bm-max">—</span></span></strong>
+            <strong>
+              <span id="bm-players">—</span><span class="status-max"> / <span id="bm-max">—</span></span>
+            </strong>
           </div>
         </div>
         <div class="live-address" id="copy-ip" role="button" tabindex="0" title="Скопировать IP">
@@ -101,7 +90,7 @@
     <span>SCUM · PvE · 37.150.212.7:7790</span>
   </footer>
 
-  <script src="site.js?v=20"></script>
-  <script src="home.js?v=20"></script>
+  <script src="site.js?v=21"></script>
+  <script src="home.js?v=21"></script>
 </body>
 </html>
