@@ -4,27 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Остров Судьбы — PvE сервер SCUM</title>
-  <meta name="description" content="Остров Судьбы — PvE сервер SCUM. IP 37.150.212.7:7790" />
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <meta name="description" content="Остров Судьбы — PvE сервер SCUM. IP 37.150.212.7:7790. Новости, настройки и правила." />
+  <meta name="theme-color" content="#040708" />
+  <link rel="stylesheet" href="styles.css?v=20" />
 </head>
 <body class="page-home">
+  <div class="cursor-glow" aria-hidden="true"></div>
   <header class="site-nav" data-site-nav></header>
 
   <section class="hero hero-brand">
-    <div class="hero-media">
+    <div class="hero-media" data-parallax>
       <img src="assets/hero.png" alt="Остров Судьбы" fetchpriority="high" />
+      <div class="hero-scan" aria-hidden="true"></div>
       <div class="hero-mist" aria-hidden="true"></div>
       <div class="hero-rays" aria-hidden="true"></div>
       <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
     </div>
 
-    <div class="hero-stage hero-stage-center">
+    <div class="hero-stage">
       <p class="eyebrow">SCUM · PvE · ВЫЖИВАНИЕ</p>
-      <h1 class="brand-hero-title">ОСТРОВ<br /><span>СУДЬБЫ</span></h1>
+      <h1 class="brand-hero-title" data-split>
+        <span class="line">ОСТРОВ</span>
+        <span class="line">СУДЬБЫ</span>
+      </h1>
       <p class="survival-mark">Где каждый день — испытание</p>
       <div class="survival-rule" aria-hidden="true"></div>
 
-      <div class="connect-links connect-links-hero">
+      <div class="hero-cta">
+        <a class="btn" href="#connect">Подключиться</a>
+        <a class="btn btn-ghost" href="https://discord.gg/Aq4wKQeZWn" target="_blank" rel="noopener noreferrer">Discord</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Дальше</span>
+      <i></i>
+    </div>
+  </section>
+
+  <section class="home-dock" id="connect">
+    <div class="dock-shell">
+      <div class="live-panel reveal">
+        <div class="live-online is-offline" id="live-online">
+          <span class="status-dot is-offline" id="bm-dot" aria-hidden="true"></span>
+          <div class="live-online-text">
+            <span>Онлайн сейчас</span>
+            <strong><span id="bm-players">—</span><span class="status-max"> / <span id="bm-max">—</span></span></strong>
+          </div>
+        </div>
+        <div class="live-address" id="copy-ip" role="button" tabindex="0" title="Скопировать IP">
+          <span class="dock-label">Адрес сервера</span>
+          <code>37.150.212.7:7790</code>
+          <span class="copy-hint" data-copy-hint>Нажми, чтобы скопировать</span>
+        </div>
+      </div>
+
+      <div class="connect-links reveal">
         <a class="link-chip link-discord" href="https://discord.gg/Aq4wKQeZWn" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.07.07 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.07.07 0 0 0-.078-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.08.08 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.08.08 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.08.08 0 0 1-.008-.132c.126-.094.252-.193.372-.292a.07.07 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .079.01c.12.099.246.198.373.292a.08.08 0 0 1-.006.133 12.3 12.3 0 0 1-1.873.891.08.08 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.08.08 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.08.08 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
           <span>Discord</span>
@@ -34,9 +72,36 @@
           <span>WarGM</span>
         </a>
       </div>
+
+      <div class="explore-grid">
+        <a class="explore-card reveal" href="news/index.html">
+          <em>Лента</em>
+          <strong>Новости</strong>
+          <p>Патчи SCUM с переводом для игроков острова.</p>
+          <span class="arrow">Открыть →</span>
+        </a>
+        <a class="explore-card reveal" href="settings/index.html">
+          <em>Мир</em>
+          <strong>Настройки</strong>
+          <p>Лут, зомби, транспорт, строительство и моды.</p>
+          <span class="arrow">Открыть →</span>
+        </a>
+        <a class="explore-card reveal" href="rules/index.html">
+          <em>Порядок</em>
+          <strong>Правила</strong>
+          <p>Честная игра, лут, базы и общение.</p>
+          <span class="arrow">Открыть →</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <script src="site.js?v=7"></script>
+  <footer class="footer">
+    <strong>ОСТРОВ СУДЬБЫ</strong>
+    <span>SCUM · PvE · 37.150.212.7:7790</span>
+  </footer>
+
+  <script src="site.js?v=20"></script>
+  <script src="home.js?v=20"></script>
 </body>
 </html>

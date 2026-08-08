@@ -3,6 +3,9 @@
   const elMax = document.getElementById("bm-max");
   const elDot = document.getElementById("bm-dot");
   const elLive = document.getElementById("live-online");
+  const copyIp = document.getElementById("copy-ip");
+  const copyHint = copyIp ? copyIp.querySelector("[data-copy-hint]") : null;
+  const IP = "37.150.212.7:7790";
 
   function applyStatus(data) {
     if (!data || typeof data !== "object") return;
@@ -42,6 +45,43 @@
         elLive.classList.remove("is-online");
       }
     }
+  }
+
+  async function copyAddress() {
+    if (!copyIp) return;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(IP);
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = IP;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      }
+      copyIp.classList.add("is-copied");
+      if (copyHint) copyHint.textContent = "Скопировано";
+      setTimeout(function () {
+        copyIp.classList.remove("is-copied");
+        if (copyHint) copyHint.textContent = "Нажми, чтобы скопировать";
+      }, 1600);
+    } catch (e) {
+      if (copyHint) copyHint.textContent = "Выдели IP вручную";
+    }
+  }
+
+  if (copyIp) {
+    copyIp.addEventListener("click", copyAddress);
+    copyIp.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        copyAddress();
+      }
+    });
   }
 
   refresh();
