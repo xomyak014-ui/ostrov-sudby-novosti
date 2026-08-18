@@ -1,7 +1,7 @@
 {
-  "running": false,
-  "players": 0,
+  "running": true,
+  "players": 1,
   "maxPlayers": 30,
-  "updatedAt": "2026-08-18T17:31:47.356Z",
+  "updatedAt": "2026-08-18T17:55:39.989Z",
   "source": "wargm"
 }
